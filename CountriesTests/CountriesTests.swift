@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import SwiftUI
+@testable import Countries
 
 final class CountriesTests: XCTestCase {
 
@@ -17,13 +19,6 @@ final class CountriesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-    }
-
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
@@ -31,4 +26,18 @@ final class CountriesTests: XCTestCase {
         }
     }
 
+}
+
+class CountryViewModelTests: XCTestCase {
+	func testLoadData() {
+		let countryViewModel = CountryViewModel()
+		countryViewModel.loadData(fileName: "countries")
+		XCTAssertEqual(countryViewModel.countries.count, 250)
+	}
+	
+	func testLoadDataHandlesFileNotFoundError() {
+		  let countryViewModel = CountryViewModel()
+		  countryViewModel.loadData(fileName: "non-existent-file")
+		  XCTAssertEqual(countryViewModel.countries.count, 0)
+	  }
 }
