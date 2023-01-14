@@ -1,5 +1,7 @@
 disabled_rules:
 - trailing_whitespace
+- line_length
+- control_statement
 opt_in_rules:
 - empty_count
 - empty_string

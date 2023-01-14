@@ -22,6 +22,7 @@ struct Country: Codable, Identifiable {
 	let unMember: Bool
 	let currencies: [String: Currency]
 	let capital: [String]
+	let altSpellings: [String]
 	let region: String
 	let subregion: String
 	let languages: [String: String]
