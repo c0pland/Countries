@@ -21,6 +21,7 @@
 		228969D3295E25C7006D4D89 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969D2295E25C7006D4D89 /* Country.swift */; };
 		22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */; };
 		22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22899B4F2970ACD600BAE90B /* CountryViewModel.swift */; };
+		22D8E4F029741175008FAE5D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D8E4EF29741175008FAE5D /* FlagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		228969D2295E25C7006D4D89 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeableBundleExtension.swift; sourceTree = "<group>"; };
 		22899B4F2970ACD600BAE90B /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		22D8E4EF29741175008FAE5D /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				2208BC7E2972B8CC003EB2D3 /* CountryCellView.swift */,
+				22D8E4EF29741175008FAE5D /* FlagView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				228969A9295E252D006D4D89 /* ContentView.swift in Sources */,
 				22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */,
 				22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */,
+				22D8E4F029741175008FAE5D /* FlagView.swift in Sources */,
 				2208BC812972D70D003EB2D3 /* CountryDetailView.swift in Sources */,
 				228969D3295E25C7006D4D89 /* Country.swift in Sources */,
 				228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */,

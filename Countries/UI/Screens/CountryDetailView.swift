@@ -13,28 +13,19 @@ struct CountryDetailView: View {
 	var body: some View {
 		VStack {
 			// Display the flag of the country
-			AsyncImage(url: URL(string: "https://www.countryflagsapi.com/png/\(country.cca3)")) { image in
-				image
-					.resizable()
-					.aspectRatio(contentMode: .fill)
-					.frame(width: 200, height: 200, alignment: .center)
-					.padding()
-							} placeholder: {
-								Image(systemName: "photo.fill")
-							}
-							.frame(width: 250, height: 250)
+			FlagView(country: country)
 			// Display the common name of the country
 			Text(country.name.common)
-				.font(.title)
+				.font(.largeTitle)
 
 			// Display the official name of the country
 			Text(country.name.official)
-				.font(.subheadline)
+				.font(.headline)
 
 			// Display the currency of the country
 			if let currency = country.currencies.first {
 				Text("Currency: \(currency.value.name) (\(currency.value.symbol))")
-					.font(.subheadline)
+					.font(.title3)
 			}
 
 			// Display the capital city of the country
@@ -57,7 +48,6 @@ struct CountryDetailView: View {
 
 struct CountryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		let austria = Country(name: Name(common: "Austria", official: "Republic of Austria"), tld: [".at"], cca2: "AT", ccn3: "040", cca3: "AUT", independent: true, status: "officially-assigned", unMember: true, currencies: ["EUR": Currency(name: "Euro", symbol: "€")], capital: ["Vienna"], altSpellings: ["AT", "Osterreich", "Oesterreich"], region: "Europe", subregion: "Western Europe", languages: ["bar": "Austro-Bavarian German"], latlng: [47.33333333, 13.33333333], landlocked: true, borders: ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"], area: 83871, flag: "🇦🇹")
-        CountryDetailView(country: austria)
+		CountryDetailView(country: CountryViewModel.sampleCountry)
     }
 }
