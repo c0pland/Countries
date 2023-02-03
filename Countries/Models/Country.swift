@@ -32,3 +32,9 @@ struct Country: Codable, Identifiable {
 	let area: Double
 	let flag: String
 }
+
+extension Country: Equatable {
+	static func == (lhs: Country, rhs: Country) -> Bool {
+		return lhs.name.common == rhs.name.common
+	}
+}

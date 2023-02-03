@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CountryDetailView: View {
 	var country: Country
+	@ObservedObject var countryUnionViewModel = CountryUnionViewModel()
 	
 	var body: some View {
 		VStack {
@@ -17,37 +18,47 @@ struct CountryDetailView: View {
 			// Display the common name of the country
 			Text(country.name.common)
 				.font(.largeTitle)
-
+			
 			// Display the official name of the country
-			Text(country.name.official)
+			Text("aka \(country.name.official)")
 				.font(.headline)
-
+				.fontDesign(.monospaced)
+				.italic()
+			
 			// Display the currency of the country
 			if let currency = country.currencies.first {
 				Text("Currency: \(currency.value.name) (\(currency.value.symbol))")
-					.font(.title3)
 			}
-
+			
 			// Display the capital city of the country
 			if let capital = country.capital.first {
 				Text("Capital: \(capital)")
-					.font(.subheadline)
 			}
-
+			
 			// Display the region and subregion of the country
-			Text("Region: \(country.region) (\(country.subregion))")
-				.font(.subheadline)
-
+			Text("Region: \(country.region)")
+			Text("Subregion: \(country.subregion)")
+			// Unions
+			HStack {
+				if countryUnionViewModel.containsMember(union: countryUnionViewModel.nato, country: country) {
+					CountryUnionCell(union: countryUnionViewModel.nato)
+				}
+				if countryUnionViewModel.containsMember(union: countryUnionViewModel.europeanUnion, country: country) {
+					CountryUnionCell(union: countryUnionViewModel.europeanUnion)
+				}
+			}
 			// Display the bordering countries
 			let borderingCountriesText = country.borders.isEmpty ? "None" : country.borders.joined(separator: ", ")
 			Text("Bordering Countries: \(borderingCountriesText)")
-				.font(.subheadline)
+			Text("Top Level Domain:\(country.tld.joined(separator: ","))")
 		}
+		.font(.title3)
+		.padding()
 	}
 }
-
 struct CountryDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-		CountryDetailView(country: CountryViewModel.sampleCountry)
-    }
+	static var previews: some View {
+		CountryDetailView(country: CountryViewModel.sampleAustria)
+		CountryDetailView(country: CountryViewModel.sampleItaly)
+	}
 }
