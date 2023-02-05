@@ -25,6 +25,7 @@
 		22F10E2C298D980100C89193 /* CountryUnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2B298D980100C89193 /* CountryUnion.swift */; };
 		22F10E2E298D9B9500C89193 /* CountryUnionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2D298D9B9500C89193 /* CountryUnionViewModel.swift */; };
 		22F10E30298DA8C700C89193 /* CountryUnionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2F298DA8C700C89193 /* CountryUnionCell.swift */; };
+		22F10E322990150000C89193 /* UnionScrollableGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E312990150000C89193 /* UnionScrollableGallery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		22F10E2B298D980100C89193 /* CountryUnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUnion.swift; sourceTree = "<group>"; };
 		22F10E2D298D9B9500C89193 /* CountryUnionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUnionViewModel.swift; sourceTree = "<group>"; };
 		22F10E2F298DA8C700C89193 /* CountryUnionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUnionCell.swift; sourceTree = "<group>"; };
+		22F10E312990150000C89193 /* UnionScrollableGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionScrollableGallery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				2208BC7E2972B8CC003EB2D3 /* CountryCellView.swift */,
 				22D8E4EF29741175008FAE5D /* FlagView.swift */,
 				22F10E2F298DA8C700C89193 /* CountryUnionCell.swift */,
+				22F10E312990150000C89193 /* UnionScrollableGallery.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				22F10E30298DA8C700C89193 /* CountryUnionCell.swift in Sources */,
 				22F10E2C298D980100C89193 /* CountryUnion.swift in Sources */,
 				22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */,
+				22F10E322990150000C89193 /* UnionScrollableGallery.swift in Sources */,
 				22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */,
 				22F10E2E298D9B9500C89193 /* CountryUnionViewModel.swift in Sources */,
 				22D8E4F029741175008FAE5D /* FlagView.swift in Sources */,

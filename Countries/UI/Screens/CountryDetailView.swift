@@ -39,14 +39,8 @@ struct CountryDetailView: View {
 			Text("Region: \(country.region)")
 			Text("Subregion: \(country.subregion)")
 			// Unions
-			HStack {
-				if countryUnionViewModel.containsMember(union: countryUnionViewModel.nato, country: country) {
-					CountryUnionCell(union: countryUnionViewModel.nato)
-				}
-				if countryUnionViewModel.containsMember(union: countryUnionViewModel.europeanUnion, country: country) {
-					CountryUnionCell(union: countryUnionViewModel.europeanUnion)
-				}
-			}
+				let unions = countryUnionViewModel.getUnions(for: country)
+				UnionScrollableGallery(unions: unions)
 			// Display the bordering countries
 			let borderingCountriesText = country.borders.isEmpty ? "None" : country.borders.joined(separator: ", ")
 			Text("Bordering Countries: \(borderingCountriesText)")

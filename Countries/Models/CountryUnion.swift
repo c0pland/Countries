@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryUnion: Codable {
+struct CountryUnion: Codable, Hashable {
 	let fullName: String
 	let abbreviation: String
 	let dateOfCreation: String
