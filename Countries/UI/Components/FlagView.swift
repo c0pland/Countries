@@ -11,7 +11,7 @@ struct FlagView: View {
 	let country: Country
 	
 	var body: some View {
-		AsyncImage(url: URL(string:"https://www.countryflagsapi.com/png/\(country.cca3)")!) { phase in // 1
+		AsyncImage(url: URL(string: "https://www.countryflagsapi.com/png/\(country.cca3)")!) { phase in // 1
 			if let image = phase.image { // 2
 				// if the image is valid
 				image
@@ -39,7 +39,7 @@ struct FlagView: View {
 
 struct FlagView_Previews: PreviewProvider {
     static var previews: some View {
-		FlagView(country: CountryViewModel.sampleCountry)
+		FlagView(country: CountryViewModel.sampleItaly)
 			.previewLayout(.sizeThatFits)
     }
 }
