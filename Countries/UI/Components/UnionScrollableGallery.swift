@@ -23,7 +23,8 @@ struct UnionScrollableGallery: View {
 
 struct RegionScrollableGallery_Previews: PreviewProvider {
     static var previews: some View {
-		let countryViewModel = CountryUnionViewModel()
-		UnionScrollableGallery(unions: [countryViewModel.nato, countryViewModel.europeanUnion])
+		let countryUnionViewModel = CountryUnionViewModel()
+		countryUnionViewModel.loadData(fileName: "countryUnions")
+		return UnionScrollableGallery(unions: countryUnionViewModel.unions)
     }
 }

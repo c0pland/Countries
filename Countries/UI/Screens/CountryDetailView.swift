@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CountryDetailView: View {
 	var country: Country
-	@ObservedObject var countryUnionViewModel = CountryUnionViewModel()
+	@EnvironmentObject private var countryUnionViewModel: CountryUnionViewModel
 	
 	var body: some View {
 		VStack {

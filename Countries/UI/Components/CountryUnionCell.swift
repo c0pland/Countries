@@ -30,6 +30,8 @@ struct CountryUnionCell: View {
 
 struct CountryUnionCell_Previews: PreviewProvider {
     static var previews: some View {
-		CountryUnionCell(union: CountryUnionViewModel().nato)
+		let countryUnionViewModel = CountryUnionViewModel()
+		countryUnionViewModel.loadData(fileName: "countryUnions")
+		return CountryUnionCell(union: countryUnionViewModel.unions[1])
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2208BC7F2972B8CC003EB2D3 /* CountryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC7E2972B8CC003EB2D3 /* CountryCellView.swift */; };
 		2208BC812972D70D003EB2D3 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC802972D70D003EB2D3 /* CountryDetailView.swift */; };
+		221EE04C29A5159C00993ACA /* unions.json in Resources */ = {isa = PBXBuildFile; fileRef = 221EE04B29A5159B00993ACA /* unions.json */; };
 		22256AE8296CB7510023B9B6 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 22256AE7296CB7510023B9B6 /* countries.json */; };
 		22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22256AE9296CB80D0023B9B6 /* CountriesListView.swift */; };
 		228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A6295E252D006D4D89 /* CountriesApp.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		2208BC7E2972B8CC003EB2D3 /* CountryCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCellView.swift; sourceTree = "<group>"; };
 		2208BC802972D70D003EB2D3 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		221EE04B29A5159B00993ACA /* unions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unions.json; sourceTree = "<group>"; };
 		22256AE7296CB7510023B9B6 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		22256AE9296CB80D0023B9B6 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		228969A3295E252D006D4D89 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 			children = (
 				22899B4A296DED3A00BAE90B /* Extension */,
 				22256AE7296CB7510023B9B6 /* countries.json */,
+				221EE04B29A5159B00993ACA /* unions.json */,
 				228969D5295E2D97006D4D89 /* UI */,
 				228969D1295E25B0006D4D89 /* Models */,
 				228969A6295E252D006D4D89 /* CountriesApp.swift */,
@@ -259,6 +262,7 @@
 			files = (
 				22256AE8296CB7510023B9B6 /* countries.json in Resources */,
 				228969AF295E252F006D4D89 /* Preview Assets.xcassets in Resources */,
+				221EE04C29A5159C00993ACA /* unions.json in Resources */,
 				228969AB295E252F006D4D89 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -38,31 +38,31 @@ class CountryViewModelTests: XCTestCase {
 }
 
 class CountryUnionViewModelTests: XCTestCase {
+	let countryUnionViewModel = CountryUnionViewModel()
+	let countryViewModel = CountryViewModel()
 	func testNatoMember() {
-		let countryUnionViewModel = CountryUnionViewModel()
-		let countryViewModel = CountryViewModel()
 		countryViewModel.loadData(fileName: "countries")
+		countryUnionViewModel.loadData(fileName: "unions")
 		if let italy = countryViewModel.countries.first(where: { $0.name.common == "Italy" }) {
-			let nato = countryUnionViewModel.nato
-			XCTAssert(countryUnionViewModel.containsMember(union: nato, country: italy))
+			let nato = countryUnionViewModel.unions.first { $0.abbreviation == "NATO" }
+			XCTAssert(countryUnionViewModel.containsMember(union: nato!, country: italy))
 		} else { XCTFail("Failed to get Italy from country list") }
 		if let russia = countryViewModel.countries.first(where: { $0.name.common == "Russia" }) {
-			let nato = countryUnionViewModel.nato
-			XCTAssertFalse(countryUnionViewModel.containsMember(union: nato, country: russia))
+			let nato = countryUnionViewModel.unions.first { $0.abbreviation == "NATO" }
+			XCTAssertFalse(countryUnionViewModel.containsMember(union: nato!, country: russia))
 		} else { XCTFail("Failed to get Russia from country list") }
 	}
 	func testUNMember() {
-		let countryUnionViewModel = CountryUnionViewModel()
-		let countryViewModel = CountryViewModel()
 		countryViewModel.loadData(fileName: "countries")
+		countryUnionViewModel.loadData(fileName: "unions")
 		if let morocco = countryViewModel.countries.first(where: { $0.name.common == "Morocco" }) {
-			let unitedNations = countryUnionViewModel.unitedNations
-			XCTAssert(countryUnionViewModel.containsMember(union: unitedNations, country: morocco))
+			let unitedNations = countryUnionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
+			XCTAssert(countryUnionViewModel.containsMember(union: unitedNations!, country: morocco))
 		} else { XCTFail("Failed to get Morocco from country list") }
 		// Kosovo is NOT a UN member
 		if let kosovo = countryViewModel.countries.first(where: { $0.name.common == "Kosovo" }) {
-			let unitedNations = countryUnionViewModel.unitedNations
-			XCTAssertFalse(countryUnionViewModel.containsMember(union: unitedNations, country: kosovo))
+			let unitedNations = countryUnionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
+			XCTAssertFalse(countryUnionViewModel.containsMember(union: unitedNations!, country: kosovo))
 		} else { XCTFail("Failed to get Kosovo from country list") }
 	}
 }
