@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountriesListView: View {
-	@ObservedObject private var countryViewModel = CountryViewModel()
+	@EnvironmentObject private var countryViewModel: CountryViewModel
 	
 	var body: some View {
 		NavigationView {
@@ -22,14 +22,14 @@ struct CountriesListView: View {
 		}
 		.navigationTitle("Countries")
 	}
-	
-	init() {
-		countryViewModel.loadData(fileName: "countries")
-	}
 }
 
 struct CountriesListView_Previews: PreviewProvider {
+	
 	static var previews: some View {
-		CountriesListView()
+		let countryViewModel = CountryViewModel()
+		countryViewModel.loadData(fileName: "countries")
+		return CountriesListView()
+			.environmentObject(countryViewModel)
 	}
 }
