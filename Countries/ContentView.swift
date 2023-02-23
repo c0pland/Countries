@@ -14,7 +14,7 @@ struct ContentView: View {
 				.tabItem {
 					Label("Countries", systemImage: "globe.europe.africa")
 				}
-			CountryUnionsListView()
+			UnionListView()
 				.tabItem {
 					Label("Unions", systemImage: "checkerboard.shield")
 				}
@@ -25,7 +25,7 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 		let countryViewModel = CountryViewModel()
-		let countryUnionViewModel = CountryUnionViewModel()
+		let countryUnionViewModel = UnionViewModel()
 		countryViewModel.loadData(fileName: "countries")
 		countryUnionViewModel.loadData(fileName: "unions")
 		return ContentView()

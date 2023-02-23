@@ -25,44 +25,52 @@ final class CountriesTests: XCTestCase {
 }
 
 class CountryViewModelTests: XCTestCase {
+	let countryViewModel = CountryViewModel()
+	let countryUnionViewModel = UnionViewModel()
 	func testLoadData() {
-		let countryViewModel = CountryViewModel()
 		countryViewModel.loadData(fileName: "countries")
+		countryUnionViewModel.loadData(fileName: "unions")
 		XCTAssertEqual(countryViewModel.countries.count, 249)
 	}
 	func testLoadDataHandlesFileNotFoundError() {
-		let countryViewModel = CountryViewModel()
 		countryViewModel.loadData(fileName: "non-existent-file", testing: true)
+		countryUnionViewModel.loadData(fileName: "non-existent-file", testing: true)
 		XCTAssertEqual(countryViewModel.countries.count, 0)
+		XCTAssertEqual(countryUnionViewModel.unions.count, 0)
 	}
 }
 
-class CountryUnionViewModelTests: XCTestCase {
-	let countryUnionViewModel = CountryUnionViewModel()
+class UnionViewModelTests: XCTestCase {
+	let unionViewModel = UnionViewModel()
 	let countryViewModel = CountryViewModel()
 	func testNatoMember() {
 		countryViewModel.loadData(fileName: "countries")
-		countryUnionViewModel.loadData(fileName: "unions")
+		unionViewModel.loadData(fileName: "unions")
 		if let italy = countryViewModel.countries.first(where: { $0.name.common == "Italy" }) {
-			let nato = countryUnionViewModel.unions.first { $0.abbreviation == "NATO" }
-			XCTAssert(countryUnionViewModel.containsMember(union: nato!, country: italy))
+			let nato = unionViewModel.unions.first { $0.abbreviation == "NATO" }
+			XCTAssert(unionViewModel.containsMember(union: nato!, country: italy))
 		} else { XCTFail("Failed to get Italy from country list") }
 		if let russia = countryViewModel.countries.first(where: { $0.name.common == "Russia" }) {
-			let nato = countryUnionViewModel.unions.first { $0.abbreviation == "NATO" }
-			XCTAssertFalse(countryUnionViewModel.containsMember(union: nato!, country: russia))
+			let nato = unionViewModel.unions.first { $0.abbreviation == "NATO" }
+			XCTAssertFalse(unionViewModel.containsMember(union: nato!, country: russia))
 		} else { XCTFail("Failed to get Russia from country list") }
 	}
 	func testUNMember() {
 		countryViewModel.loadData(fileName: "countries")
-		countryUnionViewModel.loadData(fileName: "unions")
+		unionViewModel.loadData(fileName: "unions")
 		if let morocco = countryViewModel.countries.first(where: { $0.name.common == "Morocco" }) {
-			let unitedNations = countryUnionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
-			XCTAssert(countryUnionViewModel.containsMember(union: unitedNations!, country: morocco))
+			let unitedNations = unionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
+			XCTAssert(unionViewModel.containsMember(union: unitedNations!, country: morocco))
 		} else { XCTFail("Failed to get Morocco from country list") }
 		// Kosovo is NOT a UN member
 		if let kosovo = countryViewModel.countries.first(where: { $0.name.common == "Kosovo" }) {
-			let unitedNations = countryUnionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
-			XCTAssertFalse(countryUnionViewModel.containsMember(union: unitedNations!, country: kosovo))
+			let unitedNations = unionViewModel.unions.first { $0.abbreviation.lowercased() == "un" }
+			XCTAssertFalse(unionViewModel.containsMember(union: unitedNations!, country: kosovo))
 		} else { XCTFail("Failed to get Kosovo from country list") }
+	}
+	func testMemberCount() {
+		unionViewModel.loadData(fileName: "unions")
+		let randomUnion = unionViewModel.unions.randomElement()!
+		XCTAssertEqual(randomUnion.members.count, randomUnion.numberOfMembers)
 	}
 }

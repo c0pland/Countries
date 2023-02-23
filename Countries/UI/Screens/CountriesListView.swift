@@ -15,7 +15,7 @@ struct CountriesListView: View {
 			VStack {
 				List(countryViewModel.countries) { country in
 					NavigationLink(destination: CountryDetailView(country: country)) {
-						CountryCellView(country: country)
+						CountryListCell(country: country)
 					}
 				}
 			}

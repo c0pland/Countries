@@ -10,11 +10,11 @@ import SwiftUI
 @main
 struct CountriesApp: App {
 	@ObservedObject private var countryViewModel: CountryViewModel
-	@ObservedObject private var countryUnionViewModel: CountryUnionViewModel
+	@ObservedObject private var countryUnionViewModel: UnionViewModel
 	
 	init() {
 		self.countryViewModel = CountryViewModel()
-		self.countryUnionViewModel = CountryUnionViewModel()
+		self.countryUnionViewModel = UnionViewModel()
 		countryViewModel.loadData(fileName: "countries")
 		countryUnionViewModel.loadData(fileName: "unions")
 	}
