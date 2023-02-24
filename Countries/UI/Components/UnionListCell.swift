@@ -11,22 +11,18 @@ struct UnionListCell: View {
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
 	
 	let union: Union
+	
 	var body: some View {
-		ZStack {
-			RoundedRectangle(cornerRadius: 10)
-				.fill(Color.blue)
+		VStack {
 			HStack {
-				Image(union.abbreviation.lowercased())
+				Text(union.fullName)
+					.font(.body)
+				Spacer()
+				Image("\(union.abbreviation.lowercased())-emblem")
 					.resizable()
-					.scaledToFit()
-				Text(union.abbreviation)
-					.font(.title3)
-					.bold()
-					.foregroundColor(.white)
+					.frame(width: 40, height: 40)
 			}
-			.padding()
 		}
-		.frame(width: 200, height: 80)
 	}
 }
 
