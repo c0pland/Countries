@@ -423,5 +423,61 @@
 			"Zambia",
 			"Zimbabwe"
 		]
+	},
+	{
+		"fullName": "Arab League",
+		"abbreviation": "AL",
+		"dateOfCreation": "1945-03-22",
+		"numberOfMembers": 22,
+		"members": [
+			"Algeria",
+			"Bahrain",
+			"Comoros",
+			"Djibouti",
+			"Egypt",
+			"Iraq",
+			"Jordan",
+			"Kuwait",
+			"Lebanon",
+			"Libya",
+			"Mauritania",
+			"Morocco",
+			"Oman",
+			"Palestine",
+			"Qatar",
+			"Saudi Arabia",
+			"Somalia",
+			"Sudan",
+			"Syria",
+			"Tunisia",
+			"United Arab Emirates",
+			"Yemen"
+		]
+	},
+	{
+		"fullName": "Inter-American Treaty of Reciprocal Assistance",
+		"abbreviation": "TIAR",
+		"dateOfCreation": "1948-09-02",
+		"numberOfMembers": 18,
+		"members": [
+			"Argentina",
+			"The Bahamas",
+			"Brazil",
+			"Chile",
+			"Colombia",
+			"Costa Rica",
+			"Dominican Republic",
+			"El Salvador",
+			"Guatemala",
+			"Haiti",
+			"Honduras",
+			"Panama",
+			"Paraguay",
+			"Peru",
+			"Trinidad and Tobago",
+			"United States",
+			"Uruguay",
+			"Venezuela"
+		]
 	}
 ]
