@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct CountriesApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	@ObservedObject private var countryViewModel: CountryViewModel
+	@ObservedObject private var countryUnionViewModel: UnionViewModel
+	
+	init() {
+		self.countryViewModel = CountryViewModel()
+		self.countryUnionViewModel = UnionViewModel()
+		countryViewModel.loadData(fileName: "countries")
+		countryUnionViewModel.loadData(fileName: "unions")
+	}
+	var body: some Scene {
+		WindowGroup {
+			ContentView()
+				.environmentObject(countryViewModel)
+				.environmentObject(countryUnionViewModel)
+		}
+	}
 }

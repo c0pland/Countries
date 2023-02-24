@@ -13,37 +13,18 @@ class CountryViewModel: ObservableObject {
 	// Sample countries for previews
 	public static let sampleAustria = Country(name: Name(common: "Austria", official: "Republic of Austria"), tld: [".at"], cca2: "AT", ccn3: "040", cca3: "AUT", independent: true, status: "officially-assigned", unMember: true, currencies: ["EUR": Currency(name: "Euro", symbol: "€")], capital: ["Vienna"], altSpellings: ["AT", "Osterreich", "Oesterreich"], region: "Europe", subregion: "Western Europe", languages: ["bar": "Austro-Bavarian German"], latlng: [47.33333333, 13.33333333], landlocked: true, borders: ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"], area: 83871, flag: "🇦🇹")
 	public static let sampleItaly = Country(name: Name(common: "Italy", official: "Italian Republic"), tld: [".it"], cca2: "IT", ccn3: "380", cca3: "ITA", independent: true, status: "officially-assigned", unMember: true, currencies: ["EUR": Currency(name: "Euro", symbol: "€")], capital: ["Rome"], altSpellings: ["IT", "Italian Republic", "Repubblica italiana"], region: "Europe", subregion: "Southern Europe", languages: ["ita": "Italian"], latlng: [42.83333333, 12.83333333], landlocked: false, borders: ["AUT", "FRA", "SMR", "SVN", "CHE", "VAT"], area: 301336, flag: "🇮🇹")
-
+	
 	func loadData(fileName: String, testing: Bool = false) {
-		// Found saved data in UserDefaults
-		if !testing {
-			if let savedData = UserDefaults.standard.data(forKey: "countriesData") {
+			guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else {
+				print("File not found")
+				return
+			}
+			do {
+				let data = try Data(contentsOf: url)
 				let decoder = JSONDecoder()
-				do {
-					countries = try decoder.decode([Country].self, from: savedData)
-					return
-				} catch {
-					print(error)
-				}
+				countries = try decoder.decode([Country].self, from: data)
+			} catch {
+				print("Error decoding JSON: \(error)")
 			}
 		}
-		// If there's no saved data, decode the JSON file
-		guard let url = Bundle.main.url(forResource: fileName, withExtension: "json") else { return }
-		do {
-			let data = try Data(contentsOf: url)
-			let decoder = JSONDecoder()
-			countries = try decoder.decode([Country].self, from: data)
-			saveData()
-		} catch {
-			print(error)
-		}
-	}
-
-	func saveData() {
-		let encoder = JSONEncoder()
-		if let encoded = try? encoder.encode(countries) {
-			UserDefaults.standard.set(encoded, forKey: "countriesData")
-		}
-	}
-
 }
