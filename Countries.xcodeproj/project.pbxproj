@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2206B58129ACA77F001031D5 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206B58029ACA77F001031D5 /* Favorites.swift */; };
 		2208BC7F2972B8CC003EB2D3 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC7E2972B8CC003EB2D3 /* CountryListCell.swift */; };
 		2208BC812972D70D003EB2D3 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC802972D70D003EB2D3 /* CountryDetailView.swift */; };
 		221EE04C29A5159C00993ACA /* unions.json in Resources */ = {isa = PBXBuildFile; fileRef = 221EE04B29A5159B00993ACA /* unions.json */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2206B58029ACA77F001031D5 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		2208BC7E2972B8CC003EB2D3 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
 		2208BC802972D70D003EB2D3 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 		221EE04B29A5159B00993ACA /* unions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unions.json; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				22899B4F2970ACD600BAE90B /* CountryViewModel.swift */,
 				22F10E2B298D980100C89193 /* Union.swift */,
 				22F10E2D298D9B9500C89193 /* UnionViewModel.swift */,
+				2206B58029ACA77F001031D5 /* Favorites.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */,
+				2206B58129ACA77F001031D5 /* Favorites.swift in Sources */,
 				228969A9295E252D006D4D89 /* ContentView.swift in Sources */,
 				22F10E30298DA8C700C89193 /* CountryUnionGalleryCell.swift in Sources */,
 				22EE41E529A640230067B0F6 /* UnionDetailView.swift in Sources */,
