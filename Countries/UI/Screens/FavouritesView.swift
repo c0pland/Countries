@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct FavouritesView: View {
+	@ObservedObject var favoriteCountriesViewModel = FavouriteCountriesViewModel()
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		Text("Placeholder")
+//		NavigationView {
+//			VStack {
+//				List(favoriteCountries.getCountries(), id: \.self) { country in
+//					NavigationLink(destination: CountryDetailView(country: country)) {
+//						CountryListCell(country: country)
+//					}
+//				}
+//			}
+//		}
+//		.navigationTitle("Countries")
     }
 }
 

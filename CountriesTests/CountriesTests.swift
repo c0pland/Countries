@@ -74,3 +74,15 @@ class UnionViewModelTests: XCTestCase {
 		XCTAssertEqual(randomUnion.members.count, randomUnion.numberOfMembers)
 	}
 }
+
+class FavouritesTests: XCTest {
+	let countryViewModel = CountryViewModel()
+	let favouriteCountriesViewModel = FavouriteCountriesViewModel()
+
+	func testAddingCountryToFavourites() {
+		countryViewModel.loadData(fileName: "countries", testing: true)
+		let randomCountry = countryViewModel.countries.randomElement()!
+		favouriteCountriesViewModel.add(randomCountry)
+		XCTAssertTrue(favouriteCountriesViewModel.favouriteCountries.contains(randomCountry))
+	}
+}
