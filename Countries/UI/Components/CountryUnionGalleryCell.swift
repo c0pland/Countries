@@ -14,7 +14,7 @@ struct CountryUnionGalleryCell: View {
 			RoundedRectangle(cornerRadius: 10)
 				.fill(Color.blue)
 			HStack {
-				Image(union.abbreviation.lowercased())
+				Image("\(union.abbreviation.lowercased())-emblem")
 					.resizable()
 					.scaledToFit()
 				Text(union.abbreviation)

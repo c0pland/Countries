@@ -18,6 +18,10 @@ struct ContentView: View {
 				.tabItem {
 					Label("Unions", systemImage: "checkerboard.shield")
 				}
+			FavouritesView()
+				.tabItem {
+					Label("Favourites", systemImage: "star")
+				}
 		}
     }
 }

@@ -10,6 +10,10 @@ import SwiftUI
 struct CountryDetailView: View {
 	var country: Country
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
+	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
+	var isFavorite: Bool {
+		favoriteCountriesViewModel.favoriteCountries.contains(country)
+	}
 	
 	var body: some View {
 		VStack(spacing: 10) {
@@ -53,6 +57,14 @@ struct CountryDetailView: View {
 			Text("Bordering Countries: \(borderingCountriesText)")
 			Text("Top Level Domain:\(country.tld.joined(separator: ","))")
 		}
+		.toolbar(content: {
+			Button {
+				favoriteCountriesViewModel.toggleFavorite(for: country)
+			} label: {
+				Image(systemName: isFavorite ? "star.fill" : "star")
+			}
+
+		})
 		.font(.title3)
 		.padding()
 	}

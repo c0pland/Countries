@@ -38,3 +38,9 @@ extension Country: Equatable {
 		return lhs.name.common == rhs.name.common
 	}
 }
+
+extension Country: Hashable {
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+}

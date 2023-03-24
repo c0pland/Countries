@@ -23,7 +23,7 @@ struct UnionListView: View {
 	}
 }
 
-struct CountryUnionsListView_Previews: PreviewProvider {
+struct UnionListView_Previews: PreviewProvider {
 	static var previews: some View {
 		let countryUnionViewModel = UnionViewModel()
 		countryUnionViewModel.loadData(fileName: "unions")

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CountriesListView: View {
 	@EnvironmentObject private var countryViewModel: CountryViewModel
-	
+	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
+
 	var body: some View {
 		NavigationView {
 			VStack {
@@ -19,8 +20,11 @@ struct CountriesListView: View {
 					}
 				}
 			}
+			.navigationTitle("Countries")
+			.onAppear {
+				favoriteCountriesViewModel.loadFavorites()
+			}
 		}
-		.navigationTitle("Countries")
 	}
 }
 
