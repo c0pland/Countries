@@ -19,8 +19,8 @@ struct CountriesListView: View {
 					}
 				}
 			}
+			.navigationTitle("Countries")
 		}
-		.navigationTitle("Countries")
 	}
 }
 
