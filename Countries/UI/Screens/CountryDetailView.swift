@@ -10,7 +10,10 @@ import SwiftUI
 struct CountryDetailView: View {
 	var country: Country
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
-	@ObservedObject var favouriteCountriesViewModel = FavouriteCountriesViewModel()
+	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
+	var isFavorite: Bool {
+		favoriteCountriesViewModel.favoriteCountries.contains(country)
+	}
 	
 	var body: some View {
 		VStack(spacing: 10) {
@@ -56,10 +59,11 @@ struct CountryDetailView: View {
 		}
 		.toolbar(content: {
 			Button {
-				favouriteCountriesViewModel.toggleFavourite(for: country)
+				favoriteCountriesViewModel.toggleFavorite(for: country)
 			} label: {
-				Image(systemName: favouriteCountriesViewModel.favouriteCountries.contains(country) ? "star.fill" : "star")
+				Image(systemName: isFavorite ? "star.fill" : "star")
 			}
+
 		})
 		.font(.title3)
 		.padding()

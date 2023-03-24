@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct FavouritesView: View {
-	@ObservedObject var favoriteCountriesViewModel = FavouriteCountriesViewModel()
-	
-    var body: some View {
-		Text("Placeholder")
-//		NavigationView {
-//			VStack {
-//				List(favoriteCountries.getCountries(), id: \.self) { country in
-//					NavigationLink(destination: CountryDetailView(country: country)) {
-//						CountryListCell(country: country)
-//					}
-//				}
-//			}
-//		}
-//		.navigationTitle("Countries")
-    }
+	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
+
+	var body: some View {
+		NavigationView {
+			VStack {
+				List(favoriteCountriesViewModel.favoriteCountries.sorted(by: { $0.id < $1.id }), id: \.id) { country in
+					NavigationLink(destination: CountryDetailView(country: country)) {
+						CountryListCell(country: country)
+					}
+				}
+			}
+			.navigationTitle("Favorites")
+		}
+		.onAppear {
+			favoriteCountriesViewModel.loadFavorites()
+		}
+		.onReceive(favoriteCountriesViewModel.$favoriteCountries) { _ in
+			print("Favorite countries set has changed.")
+			// Force the view to update when the favoriteCountries set changes
+		}
+	}
 }
 
 struct FavouritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavouritesView()
-    }
+	static var previews: some View {
+		FavouritesView()
+	}
 }
