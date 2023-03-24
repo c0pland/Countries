@@ -14,5 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build and Test
-      run: swift build --configuration debug -Xswiftc -target -Xswiftc x86_64-apple-macosx11.0
-      working-directory: /Users/c0pland/Swift Proj
+      run: |
+        cd $GITHUB_WORKSPACE
+        swift build --configuration debug -Xswiftc -target -Xswiftc x86_64-apple-macosx11.0
+        swift test --configuration debug -Xswiftc -target -Xswiftc x86_64-apple-macosx11.0
