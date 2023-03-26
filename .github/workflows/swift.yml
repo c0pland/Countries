@@ -13,7 +13,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up Swift
-      uses: apple/setup-swift@v2
+      uses: swift/setup-swift@v2
+      with:
+        swift-version: '5.5'
 
     - name: Build
       run: swift build
