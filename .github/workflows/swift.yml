@@ -1,17 +1,22 @@
-name: Build & Test
+name: Build and Test
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - '*'
 
 jobs:
-  build:
-    runs-on: macos-latest
+  build-and-test:
+    runs-on: macOS-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Build and Test
-      run: |
-        xcodebuild -scheme "Countries" -destination "platform=iOS Simulator, id=5E4B5310-A6E8-43BC-AE07-1DB5DBCAD9C4, OS=16.2, name=iPhone 13" -configuration Debug build test
-        
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Swift
+      uses: apple/setup-swift@v2
+
+    - name: Build
+      run: swift build
+
+    - name: Test
+      run: swift test
