@@ -9,14 +9,15 @@ import SwiftUI
 
 struct FavouritesView: View {
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
-
+	@EnvironmentObject var router: Router
+	
 	var body: some View {
 		NavigationView {
 			VStack {
 				List(favoriteCountriesViewModel.favoriteCountries.sorted(by: { $0.id < $1.id }), id: \.id) { country in
-					NavigationLink(destination: CountryDetailView(country: country)) {
+					NavigationLink(destination: CountryDetailView(country: country), label: {
 						CountryListCell(country: country)
-					}
+					})
 				}
 			}
 			.navigationTitle("Favorites")

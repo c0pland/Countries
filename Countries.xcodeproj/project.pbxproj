@@ -13,6 +13,7 @@
 		22256AE8296CB7510023B9B6 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 22256AE7296CB7510023B9B6 /* countries.json */; };
 		22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22256AE9296CB80D0023B9B6 /* CountriesListView.swift */; };
 		227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F00CB29A7902200490844 /* UnionEmblem.swift */; };
+		227F090D29D1D09800BC148A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F090C29D1D09800BC148A /* Router.swift */; };
 		228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A6295E252D006D4D89 /* CountriesApp.swift */; };
 		228969A9295E252D006D4D89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A8295E252D006D4D89 /* ContentView.swift */; };
 		228969AB295E252F006D4D89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 228969AA295E252F006D4D89 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		22256AE7296CB7510023B9B6 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		22256AE9296CB80D0023B9B6 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
 		227F00CB29A7902200490844 /* UnionEmblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionEmblem.swift; sourceTree = "<group>"; };
+		227F090C29D1D09800BC148A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		228969A3295E252D006D4D89 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		228969A6295E252D006D4D89 /* CountriesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesApp.swift; sourceTree = "<group>"; };
 		228969A8295E252D006D4D89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				228969D2295E25C7006D4D89 /* Country.swift */,
 				22F10E2B298D980100C89193 /* Union.swift */,
 				22DDD31329CDED8100A3C9A2 /* Consts.swift */,
+				227F090C29D1D09800BC148A /* Router.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */,
 				22F10E322990150000C89193 /* UnionScrollableGallery.swift in Sources */,
 				22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */,
+				227F090D29D1D09800BC148A /* Router.swift in Sources */,
 				227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */,
 				22EE41E329A63D510067B0F6 /* UnionListView.swift in Sources */,
 				22D2D44429A8E72A0099A39B /* FavouritesView.swift in Sources */,

@@ -8,26 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-		TabView {
+	@EnvironmentObject var router: Router
+	@State private var path: [Int] = []
+	
+	var body: some View {
+		TabView(selection: $router.selectedTab) {
 			CountriesListView()
 				.tabItem {
-					Label("Countries", systemImage: "globe.europe.africa")
+					Button {
+						Router.shared.selectedTab = 0
+					} label: {
+						Label("Countries", systemImage: "globe.europe.africa")
+					}
 				}
+				.tag(0)
 			UnionListView()
 				.tabItem {
-					Label("Unions", systemImage: "checkerboard.shield")
+					Button {
+						Router.shared.selectedTab = 1
+					} label: {
+						Label("Unions", systemImage: "checkerboard.shield")
+					}
 				}
+				.tag(1)
 			FavouritesView()
 				.tabItem {
-					Label("Favourites", systemImage: "star")
-				}
+					Button {
+						Router.shared.selectedTab = 2
+					} label: {
+						Label("Favourites", systemImage: "star")
+					}
+				}.tag(2)
 		}
-    }
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		let countryViewModel = CountryViewModel()
 		let countryUnionViewModel = UnionViewModel()
 		countryViewModel.loadData(fileName: "countries")
@@ -35,5 +52,5 @@ struct ContentView_Previews: PreviewProvider {
 		return ContentView()
 			.environmentObject(countryViewModel)
 			.environmentObject(countryUnionViewModel)
-    }
+	}
 }

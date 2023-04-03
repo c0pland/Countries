@@ -23,6 +23,7 @@ struct CountriesApp: App {
 			ContentView()
 				.environmentObject(countryViewModel)
 				.environmentObject(countryUnionViewModel)
+				.environmentObject(Router.shared)
 		}
 	}
 }
