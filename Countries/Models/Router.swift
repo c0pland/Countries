@@ -9,7 +9,9 @@ import Foundation
 import SwiftUI
 
 final class Router: ObservableObject {
-	static let shared = Router()
+	@Published var countriesPath = NavigationPath()
+	@Published var unionsPath = NavigationPath()
+	@Published var favoritesPath = NavigationPath()
 	@Published var selectedTab = 0
-	@Published var path = NavigationPath()
+	@Published var navigationTitle = "Countries"
 }

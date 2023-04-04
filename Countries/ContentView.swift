@@ -9,37 +9,46 @@ import SwiftUI
 
 struct ContentView: View {
 	@EnvironmentObject var router: Router
-	@State private var path: [Int] = []
 	
 	var body: some View {
 		TabView(selection: $router.selectedTab) {
-			CountriesListView()
-				.tabItem {
-					Button {
-						Router.shared.selectedTab = 0
-					} label: {
+			NavigationStack(path: $router.countriesPath) {
+				CountriesListView()
+			}
+					.tag(0)
+					.tabItem {
 						Label("Countries", systemImage: "globe.europe.africa")
 					}
-				}
-				.tag(0)
-			UnionListView()
-				.tabItem {
-					Button {
-						Router.shared.selectedTab = 1
-					} label: {
+					.onAppear {
+						router.navigationTitle = "Countries"
+						router.selectedTab = 0
+					}
+			
+			NavigationStack(path: $router.unionsPath) {
+				UnionListView()
+			}
+					.tag(1)
+					.tabItem {
 						Label("Unions", systemImage: "checkerboard.shield")
 					}
-				}
-				.tag(1)
-			FavouritesView()
-				.tabItem {
-					Button {
-						Router.shared.selectedTab = 2
-					} label: {
+					.onAppear {
+						router.navigationTitle = "Unions"
+						router.selectedTab = 1
+					}
+		
+			NavigationStack(path: $router.favoritesPath) {
+				FavouritesView()
+			}
+					.tag(2)
+					.tabItem {
 						Label("Favourites", systemImage: "star")
 					}
-				}.tag(2)
-		}
+					.onAppear {
+						router.navigationTitle = "Favorites"
+						router.selectedTab = 2
+					}
+			}
+		.navigationTitle(router.navigationTitle)
 	}
 }
 
@@ -52,5 +61,6 @@ struct ContentView_Previews: PreviewProvider {
 		return ContentView()
 			.environmentObject(countryViewModel)
 			.environmentObject(countryUnionViewModel)
+			.environmentObject(Router())
 	}
 }

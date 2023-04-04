@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct UnionScrollableGallery: View {
+	@EnvironmentObject private var router: Router
+
 	let unions: [Union]
     var body: some View {
 		ScrollView(.horizontal, showsIndicators: false) {
 					HStack(spacing: 20) {
 						ForEach(unions, id: \.self) { union in
 							CountryUnionGalleryCell(union: union)
+								.onTapGesture {
+									router.unionsPath.append(union)
+									router.selectedTab = 1
+								}
 						}
 					}
 				}

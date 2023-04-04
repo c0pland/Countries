@@ -10,20 +10,20 @@ import SwiftUI
 struct CountriesListView: View {
 	@EnvironmentObject private var countryViewModel: CountryViewModel
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
-
+	@EnvironmentObject private var router: Router
+	
 	var body: some View {
-		NavigationView {
-			VStack {
-				List(countryViewModel.countries) { country in
-					NavigationLink(destination: CountryDetailView(country: country)) {
-						CountryListCell(country: country)
-					}
+		List(countryViewModel.countries) { country in
+			CountryListCell(country: country)
+				.onTapGesture {
+					router.countriesPath.append(country)
 				}
-			}
-			.navigationTitle("Countries")
-			.onAppear {
-				favoriteCountriesViewModel.loadFavorites()
-			}
+		}
+		.navigationDestination(for: Country.self) { country in
+			CountryDetailView(country: country)
+		}
+		.navigationDestination(for: Union.self) { union in
+			UnionDetailView(union: union)
 		}
 	}
 }
@@ -35,5 +35,6 @@ struct CountriesListView_Previews: PreviewProvider {
 		countryViewModel.loadData(fileName: "countries")
 		return CountriesListView()
 			.environmentObject(countryViewModel)
+			.environmentObject(Router())
 	}
 }

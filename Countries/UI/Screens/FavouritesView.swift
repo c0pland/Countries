@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FavouritesView: View {
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
-	@EnvironmentObject var router: Router
+	@ObservedObject var router = Router()
 	
 	var body: some View {
 		NavigationView {
@@ -26,7 +26,6 @@ struct FavouritesView: View {
 			favoriteCountriesViewModel.loadFavorites()
 		}
 		.onReceive(favoriteCountriesViewModel.$favoriteCountries) { _ in
-			print("Favorite countries set has changed.")
 			// Force the view to update when the favoriteCountries set changes
 		}
 	}

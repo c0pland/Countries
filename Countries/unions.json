@@ -204,7 +204,7 @@
 		"fullName": "North Atlantic Treaty Organisation",
 		"abbreviation": "NATO",
 		"dateOfCreation": "1949-04-04",
-		"numberOfMembers": 30,
+		"numberOfMembers": 31,
 		"members": [
 			"USA",
 			"Canada",
@@ -235,7 +235,8 @@
 			"Croatia",
 			"North Macedonia",
 			"Slovenia",
-			"Montenegro"
+			"Montenegro",
+			"Finland"
 		]
 	},
 	{
