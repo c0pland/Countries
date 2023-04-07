@@ -9,14 +9,19 @@ import SwiftUI
 
 struct UnionListView: View {
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
+	@EnvironmentObject private var router: Router
 	
 	var body: some View {
 		NavigationView {
 			VStack {
 				List(countryUnionViewModel.unions) { union in
-					NavigationLink(destination: UnionDetailView(union: union)) {
 						UnionListCell(union: union)
-					}
+						.onTapGesture {
+							router.unionsPath.append(union)
+						}
+				}
+				.navigationDestination(for: Union.self) { union in
+					UnionDetailView(union: union)
 				}
 			}
 		}
@@ -29,5 +34,6 @@ struct UnionListView_Previews: PreviewProvider {
 		countryUnionViewModel.loadData(fileName: "unions")
 		return UnionListView()
 			.environmentObject(countryUnionViewModel)
+			.environmentObject(Router())
 	}
 }

@@ -11,6 +11,7 @@ struct CountryDetailView: View {
 	var country: Country
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
+
 	var isFavorite: Bool {
 		favoriteCountriesViewModel.favoriteCountries.contains(country)
 	}
