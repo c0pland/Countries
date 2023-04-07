@@ -12,6 +12,10 @@
 		221EE04C29A5159C00993ACA /* unions.json in Resources */ = {isa = PBXBuildFile; fileRef = 221EE04B29A5159B00993ACA /* unions.json */; };
 		22256AE8296CB7510023B9B6 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 22256AE7296CB7510023B9B6 /* countries.json */; };
 		22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22256AE9296CB80D0023B9B6 /* CountriesListView.swift */; };
+		2265523229E02EB600F8A458 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523129E02EB600F8A458 /* RouterTests.swift */; };
+		2265523429E03D1900F8A458 /* CountryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523329E03D1900F8A458 /* CountryViewModelTests.swift */; };
+		2265523629E03D6900F8A458 /* UnionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523529E03D6900F8A458 /* UnionViewModelTests.swift */; };
+		2265523829E03D8C00F8A458 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523729E03D8C00F8A458 /* FavoritesTests.swift */; };
 		227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F00CB29A7902200490844 /* UnionEmblem.swift */; };
 		227F090D29D1D09800BC148A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F090C29D1D09800BC148A /* Router.swift */; };
 		228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A6295E252D006D4D89 /* CountriesApp.swift */; };
@@ -51,6 +55,10 @@
 		221EE04B29A5159B00993ACA /* unions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unions.json; sourceTree = "<group>"; };
 		22256AE7296CB7510023B9B6 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		22256AE9296CB80D0023B9B6 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
+		2265523129E02EB600F8A458 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		2265523329E03D1900F8A458 /* CountryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModelTests.swift; sourceTree = "<group>"; };
+		2265523529E03D6900F8A458 /* UnionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionViewModelTests.swift; sourceTree = "<group>"; };
+		2265523729E03D8C00F8A458 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		227F00CB29A7902200490844 /* UnionEmblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionEmblem.swift; sourceTree = "<group>"; };
 		227F090C29D1D09800BC148A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		228969A3295E252D006D4D89 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +151,10 @@
 			isa = PBXGroup;
 			children = (
 				228969B8295E252F006D4D89 /* CountriesTests.swift */,
+				2265523129E02EB600F8A458 /* RouterTests.swift */,
+				2265523329E03D1900F8A458 /* CountryViewModelTests.swift */,
+				2265523529E03D6900F8A458 /* UnionViewModelTests.swift */,
+				2265523729E03D8C00F8A458 /* FavoritesTests.swift */,
 			);
 			path = CountriesTests;
 			sourceTree = "<group>";
@@ -257,7 +269,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					228969A2295E252D006D4D89 = {
 						CreatedOnToolsVersion = 14.2;
@@ -361,6 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2265523629E03D6900F8A458 /* UnionViewModelTests.swift in Sources */,
+				2265523829E03D8C00F8A458 /* FavoritesTests.swift in Sources */,
+				2265523229E02EB600F8A458 /* RouterTests.swift in Sources */,
+				2265523429E03D1900F8A458 /* CountryViewModelTests.swift in Sources */,
 				228969B9295E252F006D4D89 /* CountriesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +425,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -467,6 +484,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -493,6 +511,7 @@
 				CODE_SIGN_ENTITLEMENTS = Countries/Countries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Countries/Preview Content\"";
 				DEVELOPMENT_TEAM = XGM98P9V33;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -535,6 +554,7 @@
 				CODE_SIGN_ENTITLEMENTS = Countries/Countries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Countries/Preview Content\"";
 				DEVELOPMENT_TEAM = XGM98P9V33;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -576,6 +596,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XGM98P9V33;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -601,6 +622,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = XGM98P9V33;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
