@@ -15,39 +15,39 @@ struct ContentView: View {
 			NavigationStack(path: $router.countriesPath) {
 				CountriesListView()
 			}
-					.tag(0)
-					.tabItem {
-						Label("Countries", systemImage: "globe.europe.africa")
-					}
-					.onAppear {
-						router.navigationTitle = "Countries"
-						router.selectedTab = 0
-					}
+			.tag(Tabs.countries)
+			.tabItem {
+				Label("Countries", systemImage: "globe.europe.africa")
+			}
+			.onAppear {
+				router.navigationTitle = "Countries"
+				router.selectedTab = Tabs.countries
+			}
 			
 			NavigationStack(path: $router.unionsPath) {
 				UnionListView()
 			}
-					.tag(1)
-					.tabItem {
-						Label("Unions", systemImage: "checkerboard.shield")
-					}
-					.onAppear {
-						router.navigationTitle = "Unions"
-						router.selectedTab = 1
-					}
-		
+			.tag(Tabs.unions)
+			.tabItem {
+				Label("Unions", systemImage: "checkerboard.shield")
+			}
+			.onAppear {
+				router.navigationTitle = "Unions"
+				router.selectedTab = Tabs.unions
+			}
+			
 			NavigationStack(path: $router.favoritesPath) {
 				FavouritesView()
 			}
-					.tag(2)
-					.tabItem {
-						Label("Favourites", systemImage: "star")
-					}
-					.onAppear {
-						router.navigationTitle = "Favorites"
-						router.selectedTab = 2
-					}
+			.tag(Tabs.favorites)
+			.tabItem {
+				Label("Favourites", systemImage: "star")
 			}
+			.onAppear {
+				router.navigationTitle = "Favorites"
+				router.selectedTab = Tabs.favorites
+			}
+		}
 		.navigationTitle(router.navigationTitle)
 	}
 }

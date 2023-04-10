@@ -18,7 +18,7 @@ struct UnionScrollableGallery: View {
 							CountryUnionGalleryCell(union: union)
 								.onTapGesture {
 									router.unionsPath.append(union)
-									router.selectedTab = 1
+									router.selectedTab = Tabs.unions
 								}
 						}
 					}
