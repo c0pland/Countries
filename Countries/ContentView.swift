@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var router: Router
+	@StateObject var router = Router()
 	
 	var body: some View {
-		TabView(selection: $router.selectedTab) {
+		TabView(selection: createTabViewBinding()) {
 			NavigationStack(path: $router.countriesPath) {
 				CountriesListView()
 			}
+			.navigationTitle(router.navigationTitle)
 			.tag(Tabs.countries)
 			.tabItem {
 				Label("Countries", systemImage: "globe.europe.africa")
+				
 			}
-			.onAppear {
-				router.navigationTitle = "Countries"
-				router.selectedTab = Tabs.countries
-			}
+//			.onAppear {
+//				router.navigationTitle = "Countries"
+//				router.selectedTab = Tabs.countries
+//			}
 			
 			NavigationStack(path: $router.unionsPath) {
 				UnionListView()
@@ -31,10 +33,10 @@ struct ContentView: View {
 			.tabItem {
 				Label("Unions", systemImage: "checkerboard.shield")
 			}
-			.onAppear {
-				router.navigationTitle = "Unions"
-				router.selectedTab = Tabs.unions
-			}
+//			.onAppear {
+//				router.navigationTitle = "Unions"
+//				router.selectedTab = Tabs.unions
+//			}
 			
 			NavigationStack(path: $router.favoritesPath) {
 				FavouritesView()
@@ -43,12 +45,38 @@ struct ContentView: View {
 			.tabItem {
 				Label("Favourites", systemImage: "star")
 			}
-			.onAppear {
-				router.navigationTitle = "Favorites"
-				router.selectedTab = Tabs.favorites
-			}
+//			.onAppear {
+//				router.navigationTitle = "Favorites"
+//				router.selectedTab = Tabs.favorites
+//			}
 		}
 		.navigationTitle(router.navigationTitle)
+		.environmentObject(router)
+	}
+	
+	private func createTabViewBinding() -> Binding<Tabs> {
+		Binding<Tabs>(
+			get: { router.selectedTab },
+			set: { selectedTab in
+				if selectedTab == router.selectedTab {
+					print("tapped same tab")
+					switch selectedTab {
+					case .countries:
+						withAnimation {
+							router.countriesPath = NavigationPath()
+						}
+					case .unions:
+						withAnimation {
+							router.unionsPath = NavigationPath()
+						}
+					case .favorites:
+						withAnimation {
+							router.favoritesPath = NavigationPath()
+						}
+					}
+				}
+				router.selectedTab = selectedTab
+			})
 	}
 }
 
@@ -61,6 +89,5 @@ struct ContentView_Previews: PreviewProvider {
 		return ContentView()
 			.environmentObject(countryViewModel)
 			.environmentObject(countryUnionViewModel)
-			.environmentObject(Router())
 	}
 }
