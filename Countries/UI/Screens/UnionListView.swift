@@ -12,19 +12,17 @@ struct UnionListView: View {
 	@EnvironmentObject private var router: Router
 	
 	var body: some View {
-		NavigationView {
-			VStack {
-				List(countryUnionViewModel.unions) { union in
-						UnionListCell(union: union)
-						.onTapGesture {
-							router.unionsPath.append(union)
-						}
+		List(countryUnionViewModel.unions) { union in
+			UnionListCell(union: union)
+				.onTapGesture {
+					router.unionsPath.append(union)
 				}
-				.navigationDestination(for: Union.self) { union in
-					UnionDetailView(union: union)
-				}
-			}
+				.id(ScrollAnchor.unions)
 		}
+		.navigationDestination(for: Union.self) { union in
+			UnionDetailView(union: union)
+		}
+		.navigationTitle(router.navigationTitle)
 	}
 }
 

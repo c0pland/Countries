@@ -8,47 +8,96 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var router: Router
+	@StateObject var router = Router()
 	
 	var body: some View {
-		TabView(selection: $router.selectedTab) {
-			NavigationStack(path: $router.countriesPath) {
-				CountriesListView()
+		ScrollViewReader { proxy in
+			TabView(selection: createTabViewBinding(scrollViewProxy: proxy)) {
+				NavigationStack(path: $router.countriesPath) {
+					CountriesListView()
+				}
+				.navigationTitle(router.navigationTitle)
+				.tag(Tabs.countries)
+				.tabItem {
+					Label("Countries", systemImage: "globe.europe.africa")
+					
+				}
+				.onAppear {
+					router.navigationTitle = "Countries"
+				}
+				
+				NavigationStack(path: $router.unionsPath) {
+					UnionListView()
+				}
+				.tag(Tabs.unions)
+				.tabItem {
+					Label("Unions", systemImage: "checkerboard.shield")
+				}
+				.onAppear {
+					router.navigationTitle = "Unions"
+				}
+				
+				NavigationStack(path: $router.favoritesPath) {
+					FavouritesView()
+				}
+				.tag(Tabs.favorites)
+				.tabItem {
+					Label("Favorites", systemImage: "star")
+				}
+				.onAppear {
+					router.navigationTitle = "Favorites"
+				}
 			}
-					.tag(0)
-					.tabItem {
-						Label("Countries", systemImage: "globe.europe.africa")
+			.environmentObject(router)
+		}
+	}
+	
+	private func createTabViewBinding(scrollViewProxy: ScrollViewProxy) -> Binding<Tabs> {
+		Binding<Tabs>(
+			get: { router.selectedTab },
+			set: { selectedTab in
+				if selectedTab == router.selectedTab {
+					switch selectedTab {
+					case .countries:
+						if router.countriesPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.countries, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.countriesPath = NavigationPath()
+							}
+						}
+					case .unions:
+						if router.unionsPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.unions, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.unionsPath = NavigationPath()
+							}
+						}
+					case .favorites:
+						if router.favoritesPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.favorites, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.favoritesPath = NavigationPath()
+							}
+						}
 					}
-					.onAppear {
-						router.navigationTitle = "Countries"
-						router.selectedTab = 0
-					}
-			
-			NavigationStack(path: $router.unionsPath) {
-				UnionListView()
-			}
-					.tag(1)
-					.tabItem {
-						Label("Unions", systemImage: "checkerboard.shield")
-					}
-					.onAppear {
-						router.navigationTitle = "Unions"
-						router.selectedTab = 1
-					}
-		
-			NavigationStack(path: $router.favoritesPath) {
-				FavouritesView()
-			}
-					.tag(2)
-					.tabItem {
-						Label("Favourites", systemImage: "star")
-					}
-					.onAppear {
-						router.navigationTitle = "Favorites"
-						router.selectedTab = 2
-					}
-			}
-		.navigationTitle(router.navigationTitle)
+				}
+				router.selectedTab = selectedTab
+			})
 	}
 }
 
@@ -61,6 +110,5 @@ struct ContentView_Previews: PreviewProvider {
 		return ContentView()
 			.environmentObject(countryViewModel)
 			.environmentObject(countryUnionViewModel)
-			.environmentObject(Router())
 	}
 }

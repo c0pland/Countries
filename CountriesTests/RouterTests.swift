@@ -15,7 +15,7 @@ class RouterTests: XCTestCase {
 		XCTAssertEqual(router.countriesPath.count, 0)
 		XCTAssertEqual(router.unionsPath.count, 0)
 		XCTAssertEqual(router.favoritesPath.count, 0)
-		XCTAssertEqual(router.selectedTab, 0)
+		XCTAssertEqual(router.selectedTab, Tabs.countries)
 		XCTAssertEqual(router.navigationTitle, "Countries")
 	}
 	func testRouterCountriesPath() {
@@ -59,9 +59,9 @@ class RouterTests: XCTestCase {
 	}
 	func testRouterSelectedTab() {
 		let router = Router()
-		XCTAssertEqual(router.selectedTab, 0)
-		router.selectedTab = 1
-		XCTAssertEqual(router.selectedTab, 1)
+		XCTAssertEqual(router.selectedTab, .countries)
+		router.selectedTab = .unions
+		XCTAssertEqual(router.selectedTab, .unions)
 	}
 	func testRouterNavigationTitle() {
 		let router = Router()
