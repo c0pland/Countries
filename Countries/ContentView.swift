@@ -11,67 +11,88 @@ struct ContentView: View {
 	@StateObject var router = Router()
 	
 	var body: some View {
-		TabView(selection: createTabViewBinding()) {
-			NavigationStack(path: $router.countriesPath) {
-				CountriesListView()
-			}
-			.navigationTitle(router.navigationTitle)
-			.tag(Tabs.countries)
-			.tabItem {
-				Label("Countries", systemImage: "globe.europe.africa")
+		ScrollViewReader { proxy in
+			TabView(selection: createTabViewBinding(scrollViewProxy: proxy)) {
+				NavigationStack(path: $router.countriesPath) {
+					CountriesListView()
+				}
+				.navigationTitle(router.navigationTitle)
+				.tag(Tabs.countries)
+				.tabItem {
+					Label("Countries", systemImage: "globe.europe.africa")
+					
+				}
+				.onAppear {
+					router.navigationTitle = "Countries"
+				}
 				
+				NavigationStack(path: $router.unionsPath) {
+					UnionListView()
+				}
+				.tag(Tabs.unions)
+				.tabItem {
+					Label("Unions", systemImage: "checkerboard.shield")
+				}
+				.onAppear {
+					router.navigationTitle = "Unions"
+				}
+				
+				NavigationStack(path: $router.favoritesPath) {
+					FavouritesView()
+				}
+				.tag(Tabs.favorites)
+				.tabItem {
+					Label("Favorites", systemImage: "star")
+				}
+				.onAppear {
+					router.navigationTitle = "Favorites"
+				}
 			}
-//			.onAppear {
-//				router.navigationTitle = "Countries"
-//				router.selectedTab = Tabs.countries
-//			}
-			
-			NavigationStack(path: $router.unionsPath) {
-				UnionListView()
-			}
-			.tag(Tabs.unions)
-			.tabItem {
-				Label("Unions", systemImage: "checkerboard.shield")
-			}
-//			.onAppear {
-//				router.navigationTitle = "Unions"
-//				router.selectedTab = Tabs.unions
-//			}
-			
-			NavigationStack(path: $router.favoritesPath) {
-				FavouritesView()
-			}
-			.tag(Tabs.favorites)
-			.tabItem {
-				Label("Favourites", systemImage: "star")
-			}
-//			.onAppear {
-//				router.navigationTitle = "Favorites"
-//				router.selectedTab = Tabs.favorites
-//			}
+			.environmentObject(router)
 		}
-		.navigationTitle(router.navigationTitle)
-		.environmentObject(router)
 	}
 	
-	private func createTabViewBinding() -> Binding<Tabs> {
+	private func createTabViewBinding(scrollViewProxy: ScrollViewProxy) -> Binding<Tabs> {
 		Binding<Tabs>(
 			get: { router.selectedTab },
 			set: { selectedTab in
 				if selectedTab == router.selectedTab {
-					print("tapped same tab")
 					switch selectedTab {
 					case .countries:
-						withAnimation {
-							router.countriesPath = NavigationPath()
+						if router.countriesPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.countries, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.countriesPath = NavigationPath()
+							}
 						}
 					case .unions:
-						withAnimation {
-							router.unionsPath = NavigationPath()
+						if router.unionsPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.unions, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.unionsPath = NavigationPath()
+							}
 						}
 					case .favorites:
-						withAnimation {
-							router.favoritesPath = NavigationPath()
+						if router.favoritesPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.favorites, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.favoritesPath = NavigationPath()
+							}
 						}
 					}
 				}

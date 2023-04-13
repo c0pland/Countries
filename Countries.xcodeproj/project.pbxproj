@@ -12,6 +12,7 @@
 		221EE04C29A5159C00993ACA /* unions.json in Resources */ = {isa = PBXBuildFile; fileRef = 221EE04B29A5159B00993ACA /* unions.json */; };
 		22256AE8296CB7510023B9B6 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 22256AE7296CB7510023B9B6 /* countries.json */; };
 		22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22256AE9296CB80D0023B9B6 /* CountriesListView.swift */; };
+		2231D5CC29E83FD3000808DF /* ScrollAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2231D5CB29E83FD3000808DF /* ScrollAnchor.swift */; };
 		2265523229E02EB600F8A458 /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523129E02EB600F8A458 /* RouterTests.swift */; };
 		2265523429E03D1900F8A458 /* CountryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523329E03D1900F8A458 /* CountryViewModelTests.swift */; };
 		2265523629E03D6900F8A458 /* UnionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523529E03D6900F8A458 /* UnionViewModelTests.swift */; };
@@ -56,6 +57,7 @@
 		221EE04B29A5159B00993ACA /* unions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unions.json; sourceTree = "<group>"; };
 		22256AE7296CB7510023B9B6 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		22256AE9296CB80D0023B9B6 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
+		2231D5CB29E83FD3000808DF /* ScrollAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollAnchor.swift; sourceTree = "<group>"; };
 		2265523129E02EB600F8A458 /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		2265523329E03D1900F8A458 /* CountryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModelTests.swift; sourceTree = "<group>"; };
 		2265523529E03D6900F8A458 /* UnionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionViewModelTests.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				22DDD31329CDED8100A3C9A2 /* Consts.swift */,
 				227F090C29D1D09800BC148A /* Router.swift */,
 				22EBEFD429E46F5800539242 /* Tabs.swift */,
+				2231D5CB29E83FD3000808DF /* ScrollAnchor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				227F090D29D1D09800BC148A /* Router.swift in Sources */,
 				227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */,
 				22EE41E329A63D510067B0F6 /* UnionListView.swift in Sources */,
+				2231D5CC29E83FD3000808DF /* ScrollAnchor.swift in Sources */,
 				22D2D44429A8E72A0099A39B /* FavouritesView.swift in Sources */,
 				22F10E2E298D9B9500C89193 /* UnionViewModel.swift in Sources */,
 				22EBEFD529E46F5800539242 /* Tabs.swift in Sources */,

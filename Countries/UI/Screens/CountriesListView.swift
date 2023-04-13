@@ -18,7 +18,9 @@ struct CountriesListView: View {
 				.onTapGesture {
 					router.countriesPath.append(country)
 				}
+				.id(ScrollAnchor.countries)
 		}
+		.navigationTitle(router.navigationTitle)
 		.navigationDestination(for: Country.self) { country in
 			CountryDetailView(country: country)
 		}

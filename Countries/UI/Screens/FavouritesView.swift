@@ -12,21 +12,19 @@ struct FavouritesView: View {
 	@ObservedObject var router = Router()
 	
 	var body: some View {
-		NavigationView {
-			VStack {
-				List(favoriteCountriesViewModel.favoriteCountries.sorted(by: { $0.id < $1.id }), id: \.id) { country in
-					NavigationLink(destination: CountryDetailView(country: country), label: {
-						CountryListCell(country: country)
-					})
+		List(favoriteCountriesViewModel.favoriteCountries.sorted(by: { $0.id < $1.id }), id: \.id) { country in
+			CountryListCell(country: country)
+				.onTapGesture {
+					router.favoritesPath.append(country)
 				}
-			}
-			.navigationTitle("Favorites")
+				.id(ScrollAnchor.favorites)
 		}
-		.onAppear {
-			favoriteCountriesViewModel.loadFavorites()
+		.navigationTitle(router.navigationTitle)
+		.navigationDestination(for: Country.self) { country in
+			CountryDetailView(country: country)
 		}
-		.onReceive(favoriteCountriesViewModel.$favoriteCountries) { _ in
-			// Force the view to update when the favoriteCountries set changes
+		.navigationDestination(for: Union.self) { union in
+			UnionDetailView(union: union)
 		}
 	}
 }

@@ -17,10 +17,12 @@ struct UnionListView: View {
 				.onTapGesture {
 					router.unionsPath.append(union)
 				}
+				.id(ScrollAnchor.unions)
 		}
 		.navigationDestination(for: Union.self) { union in
 			UnionDetailView(union: union)
 		}
+		.navigationTitle(router.navigationTitle)
 	}
 }
 
