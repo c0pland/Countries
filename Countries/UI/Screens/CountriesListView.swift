@@ -15,12 +15,16 @@ struct CountriesListView: View {
 	
 	var body: some View {
 		List {
-			ForEach(searchResults) { country in
-				CountryListCell(country: country)
-					.onTapGesture {
-						router.countriesPath.append(country)
-					}
-					.id(ScrollAnchor.countries)
+			if !searchResults.isEmpty {
+				ForEach(searchResults) { country in
+					CountryListCell(country: country)
+						.onTapGesture {
+							router.countriesPath.append(country)
+						}
+						.id(ScrollAnchor.countries)
+				}
+			} else {
+				Text("Nothing found for \(searchText)")
 			}
 		}
 		.navigationTitle(router.navigationTitle)
@@ -38,10 +42,9 @@ struct CountriesListView: View {
 			return countryViewModel.countries
 		} else {
 			return countryViewModel.countries.filter { country in
-				country.name.common.contains(searchText) ||
-				country.name.official.contains(searchText) ||
-				country.capital.contains(searchText) // ||
-				// ((country.currencies.first?.value.name.contains(searchText)) != nil)
+				country.name.common.lowercased().contains(searchText.lowercased()) ||
+				country.name.official.lowercased().contains(searchText.lowercased()) ||
+				country.capital[0].lowercased().contains(searchText.lowercased())
 			}
 		}
 	}
