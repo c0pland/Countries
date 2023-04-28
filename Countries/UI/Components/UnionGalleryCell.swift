@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CountryUnionGalleryCell: View {
+struct UnionGalleryCell: View {
 	let union: Union
     var body: some View {
 		ZStack {
@@ -32,6 +32,6 @@ struct CountryUnionCell_Previews: PreviewProvider {
     static var previews: some View {
 		let countryUnionViewModel = UnionViewModel()
 		countryUnionViewModel.loadData(fileName: "unions")
-		return CountryUnionGalleryCell(union: countryUnionViewModel.unions.randomElement()!)
+		return UnionGalleryCell(union: countryUnionViewModel.unions.randomElement()!)
     }
 }
