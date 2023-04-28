@@ -8,21 +8,40 @@
 import SwiftUI
 
 struct UnionListView: View {
-	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
+	@EnvironmentObject private var unionViewModel: UnionViewModel
 	@EnvironmentObject private var router: Router
+	@State private var searchText = ""
 	
 	var body: some View {
-		List(countryUnionViewModel.unions) { union in
-			UnionListCell(union: union)
-				.onTapGesture {
-					router.unionsPath.append(union)
+		List {
+			if !searchResults.isEmpty {
+				ForEach(searchResults) { union in
+					UnionListCell(union: union)
+						.onTapGesture {
+							router.unionsPath.append(union)
+						}
+						.id(ScrollAnchor.unions)
 				}
-				.id(ScrollAnchor.unions)
+			} else {
+				Text("Nothing found for ***\(searchText)***")
+			}
 		}
 		.navigationDestination(for: Union.self) { union in
 			UnionDetailView(union: union)
 		}
 		.navigationTitle(router.navigationTitle)
+		.searchable(text: $searchText)
+	}
+	
+	var searchResults: [Union] {
+		if searchText.isEmpty {
+			return unionViewModel.unions
+		} else {
+			return unionViewModel.unions.filter { union in
+				union.abbreviation.lowercased().contains(searchText.lowercased()) ||
+				union.fullName.lowercased().contains(searchText.lowercased())
+			}
+		}
 	}
 }
 
