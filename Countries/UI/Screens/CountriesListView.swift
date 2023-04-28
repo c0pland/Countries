@@ -18,6 +18,15 @@ struct CountriesListView: View {
 			if !searchResults.isEmpty {
 				ForEach(searchResults) { country in
 					CountryListCell(country: country)
+						.swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
+							Button {
+								favoriteCountriesViewModel.toggleFavorite(for: country)
+								
+							} label: {
+								Image(systemName: favoriteCountriesViewModel.favoriteCountries.contains(country) ? "star.slash.fill" : "star")
+							}
+							.tint(favoriteCountriesViewModel.favoriteCountries.contains(country) ? .red : .yellow)
+						})
 						.onTapGesture {
 							router.countriesPath.append(country)
 						}
