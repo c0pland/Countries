@@ -12,6 +12,7 @@ final class Router: ObservableObject {
 	@Published var countriesPath = NavigationPath()
 	@Published var unionsPath = NavigationPath()
 	@Published var favoritesPath = NavigationPath()
+	@Published var settingsPath = NavigationPath()
 	@Published var selectedTab = Tabs.countries
 	@Published var navigationTitle = "Countries"
 }

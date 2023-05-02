@@ -10,21 +10,21 @@ import SwiftUI
 @main
 struct CountriesApp: App {
 	@ObservedObject private var countryViewModel: CountryViewModel
-	@ObservedObject private var countryUnionViewModel: UnionViewModel
+	@ObservedObject private var unionViewModel: UnionViewModel
 	@ObservedObject private var router: Router
 	
 	init() {
 		self.countryViewModel = CountryViewModel()
-		self.countryUnionViewModel = UnionViewModel()
+		self.unionViewModel = UnionViewModel()
 		self.router = Router()
 		countryViewModel.loadData(fileName: "countries")
-		countryUnionViewModel.loadData(fileName: "unions")
+		unionViewModel.loadData(fileName: "unions")
 	}
 	var body: some Scene {
 		WindowGroup {
 			ContentView()
 				.environmentObject(countryViewModel)
-				.environmentObject(countryUnionViewModel)
+				.environmentObject(unionViewModel)
 				.environmentObject(router)
 		}
 	}

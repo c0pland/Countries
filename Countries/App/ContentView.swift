@@ -47,6 +47,16 @@ struct ContentView: View {
 				.onAppear {
 					router.navigationTitle = "Favorites"
 				}
+				NavigationStack(path: $router.settingsPath) {
+					SettingsView()
+				}
+				.tag(Tabs.settings)
+				.tabItem {
+					Label("Settings", systemImage: "gearshape")
+				}
+				.onAppear {
+					router.navigationTitle = "Settings"
+				}
 			}
 			.environmentObject(router)
 		}
@@ -92,6 +102,18 @@ struct ContentView: View {
 							// Pop to root
 							withAnimation {
 								router.favoritesPath = NavigationPath()
+							}
+						}
+					case .settings:
+						if router.settingsPath.isEmpty {
+							// Scroll to top
+							withAnimation {
+								scrollViewProxy.scrollTo(ScrollAnchor.settings, anchor: .bottom)
+							}
+						} else {
+							// Pop to root
+							withAnimation {
+								router.settingsPath = NavigationPath()
 							}
 						}
 					}

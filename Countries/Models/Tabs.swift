@@ -9,4 +9,5 @@ enum Tabs {
 	case countries
 	case unions
 	case favorites
+	case settings
 }
