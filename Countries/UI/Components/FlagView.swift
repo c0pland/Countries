@@ -15,7 +15,9 @@ struct FlagView: View {
 			.resizable()
 			.scaledToFit()
 			.border(.black)
-			.padding()
+			.padding(.bottom)
+			.padding(.horizontal)
+			.padding(.top, 0)
 	}
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BorderingCountriesScrollableGallery: View {
+struct CountriesScrollableGallery: View {
 	let countries: [Country]
 	@EnvironmentObject private var router: Router
 	
@@ -32,6 +32,6 @@ struct BorderingCountriesScrollableGallery_Previews: PreviewProvider {
 		let countryViewModel = CountryViewModel()
 		countryViewModel.loadData(fileName: "countries")
 		let sampleCountries = Array(countryViewModel.countries[0..<10])
-		return BorderingCountriesScrollableGallery(countries: sampleCountries)
+		return CountriesScrollableGallery(countries: sampleCountries)
     }
 }

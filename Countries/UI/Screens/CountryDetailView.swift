@@ -23,11 +23,7 @@ struct CountryDetailView: View {
 		ScrollView {
 			VStack(alignment: .leading, spacing: 10) {
 				// Display the flag of the country
-				HStack {
-					Spacer()
-					FlagView(country: country)
-					Spacer()
-				}
+				FlagView(country: country)
 				// Display the common name of the country
 				Text(country.name.common)
 					.font(.largeTitle)
@@ -48,23 +44,24 @@ struct CountryDetailView: View {
 				}
 				// Display the region and subregion of the country
 				Text("***Region***: \(country.region)")
-				Text("***Subregion***: \(country.subregion)")
+				if !country.subregion.isEmpty {
+					Text("***Subregion***: \(country.subregion)")
+				}
 				// Unions
-				Text("***Political Unions:***")
 				let unions = countryUnionViewModel.getUnions(for: country)
 				if !unions.isEmpty {
+					Text("***Political Unions:***")
 					UnionScrollableGallery(unions: unions)
 				} else {
-					Text("\(country.name.official) is not a member of any political unions")
+					Text("***Political Unions:*** None")
 				}
 				// Display the bordering countries
 				let neighbours = countryViewModel.getNeighbors(for: country)
 				if neighbours.isEmpty {
 					Text("***Bordering Countries:*** None")
-					
 				} else {
 					Text("***Bordering Countries:***")
-					BorderingCountriesScrollableGallery(countries: neighbours)
+					CountriesScrollableGallery(countries: neighbours)
 				}
 			}
 			.toolbar(content: {

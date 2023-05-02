@@ -41,4 +41,13 @@ class UnionViewModelTests: XCTestCase {
 		let randomUnion = unionViewModel.unions.randomElement()!
 		XCTAssertEqual(randomUnion.members.count, randomUnion.numberOfMembers)
 	}
+	func testMembers() {
+		unionViewModel.loadData(fileName: "unions")
+		let randomUnion = unionViewModel.unions.randomElement()!
+		let members = unionViewModel.getMembers(for: randomUnion)
+		XCTAssertEqual(members.count, randomUnion.numberOfMembers)
+		for index in members.indices {
+			XCTAssertTrue(randomUnion.members.contains(members[index].name.common))
+		}
+	}
 }

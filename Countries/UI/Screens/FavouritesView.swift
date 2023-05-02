@@ -19,12 +19,12 @@ struct FavouritesView: View {
 				}
 				.id(ScrollAnchor.favorites)
 		}
+		.navigationDestination(for: Union.self) { union in
+			UnionDetailView(union: union)
+		}
 		.navigationTitle(router.navigationTitle)
 		.navigationDestination(for: Country.self) { country in
 			CountryDetailView(country: country)
-		}
-		.navigationDestination(for: Union.self) { union in
-			UnionDetailView(union: union)
 		}
 	}
 }

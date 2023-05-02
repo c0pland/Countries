@@ -17,10 +17,12 @@ struct UnionEmblem: View {
 			Image(uiImage: emblemImage)
 				.resizable()
 				.scaledToFit()
+				.border(.black)
 		} else {
 			Image("\(union.abbreviation.lowercased())-emblem")
 				.resizable()
 				.scaledToFit()
+				.frame(maxHeight: 200)
 		}
 
 	}

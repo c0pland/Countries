@@ -34,4 +34,17 @@ class UnionViewModel: ObservableObject {
 		}
 		return result
 	}
+	
+	func getMembers(for union: Union) -> [Country] {
+		var result = [Country]()
+		let countryViewModel = CountryViewModel()
+		countryViewModel.loadData(fileName: "countries")
+		for memberName in union.members {
+			let member = countryViewModel.countries.first { element in
+				element.name.common == memberName
+			}
+			if member != nil { result.append(member!) }
+		}
+		return result
+	}
 }
