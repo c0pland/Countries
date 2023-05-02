@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2208BC7F2972B8CC003EB2D3 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC7E2972B8CC003EB2D3 /* CountryListCell.swift */; };
 		2208BC812972D70D003EB2D3 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208BC802972D70D003EB2D3 /* CountryDetailView.swift */; };
+		22173AED29FC18EE0069296C /* CountriesScrollableGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22173AEC29FC18EE0069296C /* CountriesScrollableGallery.swift */; };
+		22173AEF29FC19D90069296C /* CountryGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22173AEE29FC19D90069296C /* CountryGalleryCell.swift */; };
 		221EE04C29A5159C00993ACA /* unions.json in Resources */ = {isa = PBXBuildFile; fileRef = 221EE04B29A5159B00993ACA /* unions.json */; };
 		22256AE8296CB7510023B9B6 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 22256AE7296CB7510023B9B6 /* countries.json */; };
 		22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22256AE9296CB80D0023B9B6 /* CountriesListView.swift */; };
@@ -36,7 +38,7 @@
 		22EE41E729A6403D0067B0F6 /* UnionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE41E629A6403D0067B0F6 /* UnionListCell.swift */; };
 		22F10E2C298D980100C89193 /* Union.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2B298D980100C89193 /* Union.swift */; };
 		22F10E2E298D9B9500C89193 /* UnionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2D298D9B9500C89193 /* UnionViewModel.swift */; };
-		22F10E30298DA8C700C89193 /* CountryUnionGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2F298DA8C700C89193 /* CountryUnionGalleryCell.swift */; };
+		22F10E30298DA8C700C89193 /* UnionGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E2F298DA8C700C89193 /* UnionGalleryCell.swift */; };
 		22F10E322990150000C89193 /* UnionScrollableGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F10E312990150000C89193 /* UnionScrollableGallery.swift */; };
 		22FC040B29BA51020026B05F /* FavoriteCountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC040A29BA51020026B05F /* FavoriteCountriesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		2208BC7E2972B8CC003EB2D3 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
 		2208BC802972D70D003EB2D3 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		22173AEC29FC18EE0069296C /* CountriesScrollableGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesScrollableGallery.swift; sourceTree = "<group>"; };
+		22173AEE29FC19D90069296C /* CountryGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryGalleryCell.swift; sourceTree = "<group>"; };
 		221EE04B29A5159B00993ACA /* unions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = unions.json; sourceTree = "<group>"; };
 		22256AE7296CB7510023B9B6 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		22256AE9296CB80D0023B9B6 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		22EE41E629A6403D0067B0F6 /* UnionListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionListCell.swift; sourceTree = "<group>"; };
 		22F10E2B298D980100C89193 /* Union.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Union.swift; sourceTree = "<group>"; };
 		22F10E2D298D9B9500C89193 /* UnionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionViewModel.swift; sourceTree = "<group>"; };
-		22F10E2F298DA8C700C89193 /* CountryUnionGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryUnionGalleryCell.swift; sourceTree = "<group>"; };
+		22F10E2F298DA8C700C89193 /* UnionGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionGalleryCell.swift; sourceTree = "<group>"; };
 		22F10E312990150000C89193 /* UnionScrollableGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionScrollableGallery.swift; sourceTree = "<group>"; };
 		22FC040A29BA51020026B05F /* FavoriteCountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCountriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,10 +194,12 @@
 			children = (
 				2208BC7E2972B8CC003EB2D3 /* CountryListCell.swift */,
 				22D8E4EF29741175008FAE5D /* FlagView.swift */,
-				22F10E2F298DA8C700C89193 /* CountryUnionGalleryCell.swift */,
+				22F10E2F298DA8C700C89193 /* UnionGalleryCell.swift */,
 				22F10E312990150000C89193 /* UnionScrollableGallery.swift */,
 				22EE41E629A6403D0067B0F6 /* UnionListCell.swift */,
 				227F00CB29A7902200490844 /* UnionEmblem.swift */,
+				22173AEC29FC18EE0069296C /* CountriesScrollableGallery.swift */,
+				22173AEE29FC19D90069296C /* CountryGalleryCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -351,13 +357,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22173AEF29FC19D90069296C /* CountryGalleryCell.swift in Sources */,
 				22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */,
 				22DDD31429CDED8100A3C9A2 /* Consts.swift in Sources */,
 				228969A9295E252D006D4D89 /* ContentView.swift in Sources */,
-				22F10E30298DA8C700C89193 /* CountryUnionGalleryCell.swift in Sources */,
+				22F10E30298DA8C700C89193 /* UnionGalleryCell.swift in Sources */,
 				22EE41E529A640230067B0F6 /* UnionDetailView.swift in Sources */,
 				22F10E2C298D980100C89193 /* Union.swift in Sources */,
 				22FC040B29BA51020026B05F /* FavoriteCountriesViewModel.swift in Sources */,
+				22173AED29FC18EE0069296C /* CountriesScrollableGallery.swift in Sources */,
 				22256AEA296CB80D0023B9B6 /* CountriesListView.swift in Sources */,
 				22F10E322990150000C89193 /* UnionScrollableGallery.swift in Sources */,
 				22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */,

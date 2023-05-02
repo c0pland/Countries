@@ -4,6 +4,9 @@
 		"abbreviation": "UN",
 		"dateOfCreation": "1945-10-24",
 		"numberOfMembers": 193,
+		"hqCity": "New York, NY",
+		"hqCountry": "USA 🇺🇸",
+		"description": "The United Nations is an international organization established to promote peace, security, and cooperation among nations. The UN aims to achieve its mission through a variety of means, including peacekeeping operations, humanitarian assistance, and development programs. It also provides a platform for member states to discuss and address global issues such as climate change, human rights, and international trade. The UN is led by a Secretary-General, who is appointed by the General Assembly for a five-year term. The organization is governed by six principal organs, including the General Assembly, the Security Council, and the International Court of Justice.",
 		"members": [
 			"Afghanistan",
 			"Albania",
@@ -205,6 +208,9 @@
 		"abbreviation": "NATO",
 		"dateOfCreation": "1949-04-04",
 		"numberOfMembers": 31,
+		"hqCity": "Brussels",
+		"hqCountry": "Belgium 🇧🇪",
+		"description": "The North Atlantic Treaty Organization is a military alliance formed by the North Atlantic Treaty. Its primary mission is to provide collective defense against potential security threats to its member countries. NATO's fundamental principle is that an attack on one member is an attack on all, and it is committed to mutual defense and deterrence. It works to enhance the security of its member states through a range of measures, including joint military exercises, intelligence sharing, and the development of military capabilities. In addition to its core mission of collective defense, NATO has also been involved in a variety of crisis management operations and peacekeeping missions, including in Afghanistan, Kosovo, and Libya. NATO is governed by a number of bodies, including the North Atlantic Council, the Military Committee, and the NATO Parliamentary Assembly. Its decision-making process is based on consensus among its member states.",
 		"members": [
 			"USA",
 			"Canada",
@@ -244,6 +250,9 @@
 		"abbreviation": "EU",
 		"dateOfCreation": "1993-11-01",
 		"numberOfMembers": 27,
+		"hqCity": "Brussels",
+		"hqCountry": "Belgium 🇧🇪",
+		"description": "The European Union is a political and economic union of member states primarily located in Europe. Its primary goal is to promote peace, prosperity, and cooperation among its member states, and to enhance the well-being of its citizens. The EU operates through a complex system of institutions, including the European Commission, the Council of the European Union, and the European Parliament. It is based on a system of shared governance and decision-making, where each member state has a say in the policies and decisions of the Union. The EU has established a single market with free movement of goods, services, capital, and people. It has also developed policies in a wide range of areas, including environmental protection, consumer protection, social policy, and foreign affairs. The EU has expanded its membership over the years, and has also played an important role in promoting stability and democracy in its neighboring regions through its enlargement policy and various assistance programs.",
 		"members": [
 			"Austria",
 			"Belgium",
@@ -277,8 +286,11 @@
 	{
 		"fullName": "Schengen Area",
 		"abbreviation": "Schengen",
-		"dateOfCreation": "1995-03-26",
+		"dateOfCreation": "1985-03-26",
 		"numberOfMembers": 27,
+		"hqCity": "No HQ, governed by the European Union. The initial agreement was signed in Schengen",
+		"hqCountry": "Luxembourg 🇱🇺",
+		"description": "The Schengen Area is a zone comprising of European countries that have abolished internal border controls for the free movement of people. It is named after the town of Schengen in Luxembourg, where the agreement to create the area was signed in 1985. The Schengen Agreement aims to promote the free movement of people, goods, and services among its member states, while also enhancing security by ensuring that the external borders of the area are properly controlled. This is achieved through a combination of common rules on external border controls and visa policies, as well as cooperation among member states in areas such as law enforcement and judicial cooperation. Citizens of member states can travel within the Schengen Area without the need for border controls or visas. Non-EU nationals can also travel within the area if they hold a valid Schengen visa. The Schengen Area is therefore a key facilitator of tourism, trade, and cross-border cooperation in Europe.",
 		"members": [
 			"Austria",
 			"Belgium",
@@ -311,9 +323,12 @@
 	},
 	{
 		"fullName": "Eurozone",
-		"abbreviation": "Eurozone",
+		"abbreviation": "EZ",
 		"dateOfCreation": "1999-01-01",
 		"numberOfMembers": 20,
+		"hqCity": "Frankfurt",
+		"hqCountry": "Germany 🇩🇪",
+		"description": "The Eurozone is a monetary union of European Union member states that have adopted the euro as their official currency. Its primary goal is to promote economic integration among its member states by facilitating the free flow of goods, services, capital, and labor across national borders. The Eurozone is governed by the European Central Bank (ECB), which is responsible for setting monetary policy for the area. It is also governed by the Eurogroup, which is a meeting of the finance ministers of the Eurozone countries. Membership in the Eurozone is subject to a number of criteria, including sound public finances, price stability, and low inflation. Once a country joins the Eurozone, it is subject to the same monetary policy as the other members, and it no longer has the ability to independently devalue its currency to address economic problems. The Eurozone has had a significant impact on the economic landscape of Europe, promoting trade and investment among its member states and contributing to the growth of the EU economy as a whole. However, it has also faced a number of challenges, including the Eurozone debt crisis, which highlighted the need for greater fiscal integration among its member states.",
 		"members": [
 			"Austria",
 			"Belgium",
@@ -342,11 +357,14 @@
 		"abbreviation": "CSTO",
 		"dateOfCreation": "1992-02-14",
 		"numberOfMembers": 6,
+		"hqCity": "Moscow",
+		"hqCountry": "Russia 🇷🇺",
+		"description": "The Collective Security Treaty Organization (CSTO) is a regional military alliance comprising seven member states from the former Soviet Union. It was established to promote collective security among its member states and to counter security threats in the region. The CSTO operates on the principle of collective defense, with member states committed to coming to each other's aid in the event of an attack. It also seeks to promote military cooperation and coordination among its member states, including joint military exercises and the exchange of intelligence and military technologies. In addition to its core mission of collective defense, the CSTO also works to address a range of security challenges in the region, including terrorism, drug trafficking, and organized crime. The organization is governed by a number of bodies, including the Collective Security Council, which is composed of the heads of state of its member countries. The CSTO also has a number of specialized agencies and bodies, including a peacekeeping force and a joint air defense system.",
 		"members": [
 			"Armenia",
 			"Belarus",
 			"Kazakhstan",
-			"Kyryzstan",
+			"Kyrgyzstan",
 			"Russia",
 			"Tajikistan"
 		]
@@ -356,10 +374,27 @@
 		"abbreviation": "ANZUS",
 		"dateOfCreation": "1951-09-01",
 		"numberOfMembers": 3,
+		"hqCity": "No headquarters",
+		"hqCountry": "No office",
+		"description": "The Australia, New Zealand, United States Security Treaty (ANZUS) is a security alliance between Australia, New Zealand, and the United States. It was created to promote cooperation and mutual defense among its members in the Pacific region. The ANZUS treaty commits its members to consult with each other on matters of mutual security concern and to take action to defend each other against external threats. It also includes provisions for military cooperation and intelligence sharing among its members. While the ANZUS treaty remains in force, its practical application has varied over time. In 1985, the United States suspended its treaty obligations to New Zealand after the New Zealand government declared a nuclear-free zone, which included a ban on visits by nuclear-armed or powered warships. Despite this, the ANZUS alliance remains an important symbol of cooperation and shared security interests between its members. It has also played a role in regional security issues, such as supporting stability in the Asia-Pacific region and contributing to global counterterrorism efforts.",
 		"members": [
 			"Australia",
 			"New Zealand",
-			" United States"
+			"United States"
+		]
+	},
+	{
+		"fullName": "AUKUS",
+		"abbreviation": "AUKUS",
+		"dateOfCreation": "2021-09-15",
+		"numberOfMembers": 3,
+		"hqCity": "No headquarters",
+		"hqCountry": "No office",
+		"description": "AUKUS is a trilateral security alliance formed between Australia, the United Kingdom, and the United States. The alliance was established to promote security and cooperation among the three countries, with a focus on defense, technology, and intelligence sharing. The centerpiece of the AUKUS alliance is a new defense partnership between Australia, the UK, and the US, which includes the provision of nuclear-powered submarines to Australia. This new submarine fleet is intended to enhance Australia's defense capabilities in the region and to help maintain peace and stability in the Indo-Pacific. In addition to the submarine partnership, the AUKUS alliance also includes cooperation in areas such as cyber security, artificial intelligence, and quantum technologies. The alliance is intended to promote innovation and technological advancement among its members and to support the development of new defense technologies. The AUKUS alliance has been seen as a significant shift in the geopolitical landscape of the Indo-Pacific region, with the potential to alter the balance of power in the region. It has also been seen as a signal of the growing strategic importance of the Indo-Pacific and the need for greater cooperation among like-minded countries to address security challenges in the region.",
+		"members": [
+			"Australia",
+			"United Kingdom",
+			"United States"
 		]
 	},
 	{
@@ -367,6 +402,9 @@
 		"abbreviation": "AU",
 		"dateOfCreation": "2002-07-02",
 		"numberOfMembers": 55,
+		"hqCity": "Addis Ababa",
+		"hqCountry": "Ethiopia 🇪🇹",
+		"description": "The African Union (AU) is a continental organization composed of states in Africa. It was founded to promote political, economic, and social integration among its member states, and to address the continent's most pressing challenges. The African Union is governed by several bodies, including the Assembly of the African Union, which is composed of the heads of state and government of its member countries. The African Union Commission, led by a Chairperson, is the executive body of the organization and is responsible for implementing the policies and decisions of the Assembly. The African Union's objectives include promoting peace, security, and stability on the continent, supporting sustainable development and economic growth, promoting democracy and human rights, and advancing the interests of Africa on the global stage. The African Union has played a significant role in addressing a range of challenges facing the continent, including promoting conflict resolution and peacekeeping efforts, supporting economic development and integration, and addressing health and social issues such as HIV/AIDS and poverty. The organization also works closely with a range of partners, including the United Nations, regional organizations, and civil society, to advance its objectives and address the challenges facing the continent.",
 		"members": [
 			"Algeria",
 			"Angola",
@@ -430,6 +468,9 @@
 		"abbreviation": "AL",
 		"dateOfCreation": "1945-03-22",
 		"numberOfMembers": 22,
+		"hqCity": "Cairo",
+		"hqCountry": "Egypt 🇪🇬",
+		"description": "The Arab League is a regional organization of Arab countries in and around North Africa and the Middle East. It was founded to promote economic, cultural, and political cooperation among its member states, and to advance the interests of the Arab world on the global stage. The Arab League's activities are governed by several bodies, including the Council of the League, which is composed of the heads of state or government of its member countries. The Arab League also has a secretariat, which is responsible for implementing the policies and decisions of the organization. The objectives of the Arab League include promoting economic development and cooperation among its member states, preserving and promoting the Arabic language and culture, advancing the interests of the Arab world on the international stage, and promoting peace, stability, and security in the region. The Arab League has played a significant role in addressing a range of challenges facing the region, including promoting conflict resolution and peacekeeping efforts, supporting economic development and integration, and addressing health and social issues such as the COVID-19 pandemic and the Syrian refugee crisis. The organization also works closely with a range of partners, including the United Nations, regional organizations, and civil society, to advance its objectives and address the challenges facing the region.",
 		"members": [
 			"Algeria",
 			"Bahrain",
@@ -460,6 +501,9 @@
 		"abbreviation": "OAS",
 		"dateOfCreation": "1948-04-30",
 		"numberOfMembers": 34,
+		"hqCity": "Washington, DC",
+		"hqCountry": "USA 🇺🇸",
+		"description": "The Organization of American States (OAS) is a regional organization of states in the Americas. It was founded to promote political, economic, and social cooperation among its member countries and to advance the interests of the Americas on the global stage. The OAS is governed by several bodies, including the General Assembly, which is composed of the foreign ministers of its member countries. The OAS also has a Secretariat, led by a Secretary-General, which is responsible for implementing the policies and decisions of the organization. The objectives of the OAS include promoting democracy, human rights, and the rule of law in the Americas, supporting economic development and cooperation among its member states, and addressing common challenges facing the region, such as security, migration, and natural disasters. The OAS has played a significant role in addressing a range of challenges facing the region, including promoting democracy and human rights, supporting economic development and integration, and addressing issues such as drug trafficking and corruption. The organization also works closely with a range of partners, including the United Nations, regional organizations, and civil society, to advance its objectives and address the challenges facing the Americas.",
 		"members": [
 			"Antigua and Barbuda",
 			"Argentina",
@@ -495,6 +539,27 @@
 			"United States",
 			"Uruguay",
 			"Venezuela"
+		]
+	},
+	{
+		"fullName": "Association of Southeast Asian Nations",
+		"abbreviation": "ASEAN",
+		"dateOfCreation": "1967-08-08",
+		"numberOfMembers": 10,
+		"hqCity": "Jakarta",
+		"hqCountry": "Indonesia 🇮🇩",
+		"description": "The Association of Southeast Asian Nations is a regional intergovernmental organization of states in Southeast Asia. It was founded to promote political, economic, and social cooperation among its member countries and to foster regional stability and integration. The ASEAN is governed by several bodies, including the ASEAN Summit, which is composed of the heads of government of its member countries. The organization also has a Secretariat, led by a Secretary-General, which is responsible for implementing the policies and decisions of the organization. The objectives of ASEAN include accelerating economic growth, social progress, and cultural development in the region, promoting regional peace and stability, and fostering collaboration with external partners. ASEAN has played a significant role in enhancing regional cooperation and integration, including the establishment of the ASEAN Free Trade Area and the ASEAN Economic Community. The organization also works closely with a range of partners, including the United Nations, regional organizations, and civil society, to advance its objectives and address the challenges facing Southeast Asia.",
+		"members": [
+			"Brunei",
+			"Cambodia",
+			"Indonesia",
+			"Laos",
+			"Malaysia",
+			"Myanmar",
+			"Philippines",
+			"Singapore",
+			"Thailand",
+			"Vietnam"
 		]
 	}
 ]

@@ -14,4 +14,7 @@ struct Union: Codable, Hashable, Identifiable {
 	let dateOfCreation: String
 	let numberOfMembers: Int
 	let members: [String]
+	let description: String
+	let hqCity: String
+	let hqCountry: String
 }

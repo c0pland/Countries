@@ -15,7 +15,7 @@ struct UnionScrollableGallery: View {
 		ScrollView(.horizontal, showsIndicators: false) {
 					HStack(spacing: 20) {
 						ForEach(unions, id: \.self) { union in
-							CountryUnionGalleryCell(union: union)
+							UnionGalleryCell(union: union)
 								.onTapGesture {
 									router.unionsPath.append(union)
 									router.selectedTab = Tabs.unions
@@ -23,7 +23,7 @@ struct UnionScrollableGallery: View {
 						}
 					}
 				}
-		.edgesIgnoringSafeArea(.horizontal)
+		.ignoresSafeArea()
     }
 }
 

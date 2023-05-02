@@ -8,66 +8,73 @@
 import SwiftUI
 
 struct CountryDetailView: View {
+	// MARK: Properties
 	var country: Country
+	@EnvironmentObject private var countryViewModel: CountryViewModel
 	@EnvironmentObject private var countryUnionViewModel: UnionViewModel
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
-
+	@EnvironmentObject private var router: Router
+	
 	var isFavorite: Bool {
 		favoriteCountriesViewModel.favoriteCountries.contains(country)
 	}
-	
+	// MARK: Body
 	var body: some View {
-		VStack(spacing: 10) {
-			// Display the flag of the country
-			FlagView(country: country)
-			// Display the common name of the country
-			Text(country.name.common)
-				.font(.largeTitle)
-			
-			// Display the official name of the country (if it differs)
-			if country.name.official != country.name.common {
-				Text("aka \(country.name.official)")
-					.font(.headline)
-					.fontDesign(.monospaced)
-					.italic()
-			}
-			// Display the currency of the country
-			if let currency = country.currencies.first {
-				Text("Currency: \(currency.value.name) (\(currency.value.symbol))")
-			}
-			
-			// Display the capital city of the country
-			if let capital = country.capital.first {
-				Text("Capital: \(capital)")
-			}
-			
-			// Display the region and subregion of the country
-			Text("Region: \(country.region)")
-			Text("Subregion: \(country.subregion)")
-			// Unions
-			let unions = countryUnionViewModel.getUnions(for: country)
-			VStack {
+		ScrollView {
+			VStack(alignment: .leading, spacing: 10) {
+				// Display the flag of the country
+				FlagView(country: country)
+				// Display the common name of the country
+				Text(country.name.common)
+					.font(.largeTitle)
+				// Display the official name of the country (if it differs)
+				if country.name.official != country.name.common {
+					Text("aka \(country.name.official)")
+						.font(.headline)
+						.fontDesign(.monospaced)
+						.italic()
+				}
+				// Display the currency of the country
+				if let currency = country.currencies.first {
+					Text("***Currency:*** \(currency.value.name) (\(currency.value.symbol))")
+				}
+				// Display the capital city of the country
+				if let capital = country.capital.first {
+					Text("***Capital***: \(capital)")
+				}
+				// Display the region and subregion of the country
+				Text("***Region***: \(country.region)")
+				if !country.subregion.isEmpty {
+					Text("***Subregion***: \(country.subregion)")
+				}
+				// Unions
+				let unions = countryUnionViewModel.getUnions(for: country)
 				if !unions.isEmpty {
+					Text("***Political Unions:***")
 					UnionScrollableGallery(unions: unions)
 				} else {
-					Text("\(country.name.official) is not a member of any political unions")
+					Text("***Political Unions:*** None")
+				}
+				// Display the bordering countries
+				let neighbours = countryViewModel.getNeighbors(for: country)
+				if neighbours.isEmpty {
+					Text("***Bordering Countries:*** None")
+				} else {
+					Text("***Bordering Countries:***")
+					CountriesScrollableGallery(countries: neighbours)
 				}
 			}
-			// Display the bordering countries
-			let borderingCountriesText = country.borders.isEmpty ? "None" : country.borders.joined(separator: ", ")
-			Text("Bordering Countries: \(borderingCountriesText)")
-			Text("Top Level Domain:\(country.tld.joined(separator: ","))")
-		}
-		.toolbar(content: {
-			Button {
-				favoriteCountriesViewModel.toggleFavorite(for: country)
-			} label: {
-				Image(systemName: isFavorite ? "star.fill" : "star")
-			}
-
-		})
-		.font(.title3)
+			.toolbar(content: {
+				Button {
+					favoriteCountriesViewModel.toggleFavorite(for: country)
+				} label: {
+					Image(systemName: isFavorite ? "star.fill" : "star")
+				}
+				
+			})
+			.font(.title3)
 		.padding()
+		}
 	}
 }
 struct CountryDetailView_Previews: PreviewProvider {

@@ -14,7 +14,10 @@ struct FlagView: View {
 		Image("\(country.cca2.lowercased())")
 			.resizable()
 			.scaledToFit()
-			.padding()
+			.border(.black)
+			.padding(.bottom)
+			.padding(.horizontal)
+			.padding(.top, 0)
 	}
 }
 
