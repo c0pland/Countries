@@ -20,6 +20,8 @@
 		2265523629E03D6900F8A458 /* UnionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523529E03D6900F8A458 /* UnionViewModelTests.swift */; };
 		2265523829E03D8C00F8A458 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523729E03D8C00F8A458 /* FavoritesTests.swift */; };
 		227942FB2A016202005D8DB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FA2A016202005D8DB3 /* SettingsView.swift */; };
+		227942FE2A027E13005D8DB3 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FD2A027E13005D8DB3 /* AppearanceMode.swift */; };
+		227943002A029B66005D8DB3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FF2A029B66005D8DB3 /* Utilities.swift */; };
 		227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F00CB29A7902200490844 /* UnionEmblem.swift */; };
 		227F090D29D1D09800BC148A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F090C29D1D09800BC148A /* Router.swift */; };
 		228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A6295E252D006D4D89 /* CountriesApp.swift */; };
@@ -30,7 +32,7 @@
 		228969D3295E25C7006D4D89 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969D2295E25C7006D4D89 /* Country.swift */; };
 		22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */; };
 		22899B502970ACD600BAE90B /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22899B4F2970ACD600BAE90B /* CountryViewModel.swift */; };
-		22D2D44429A8E72A0099A39B /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D44329A8E72A0099A39B /* FavouritesView.swift */; };
+		22D2D44429A8E72A0099A39B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2D44329A8E72A0099A39B /* FavoritesView.swift */; };
 		22D8E4F029741175008FAE5D /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D8E4EF29741175008FAE5D /* FlagView.swift */; };
 		22DDD31429CDED8100A3C9A2 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DDD31329CDED8100A3C9A2 /* Consts.swift */; };
 		22EBEFD529E46F5800539242 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EBEFD429E46F5800539242 /* Tabs.swift */; };
@@ -68,6 +70,8 @@
 		2265523529E03D6900F8A458 /* UnionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionViewModelTests.swift; sourceTree = "<group>"; };
 		2265523729E03D8C00F8A458 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		227942FA2A016202005D8DB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		227942FD2A027E13005D8DB3 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
+		227942FF2A029B66005D8DB3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		227F00CB29A7902200490844 /* UnionEmblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionEmblem.swift; sourceTree = "<group>"; };
 		227F090C29D1D09800BC148A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		228969A3295E252D006D4D89 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +85,7 @@
 		228969D2295E25C7006D4D89 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeableBundleExtension.swift; sourceTree = "<group>"; };
 		22899B4F2970ACD600BAE90B /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
-		22D2D44329A8E72A0099A39B /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		22D2D44329A8E72A0099A39B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		22D8E4EF29741175008FAE5D /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		22DDD31329CDED8100A3C9A2 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		22EBEFD429E46F5800539242 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				227F090C29D1D09800BC148A /* Router.swift */,
 				22EBEFD429E46F5800539242 /* Tabs.swift */,
 				2231D5CB29E83FD3000808DF /* ScrollAnchor.swift */,
+				227942FD2A027E13005D8DB3 /* AppearanceMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,7 +226,7 @@
 				2208BC802972D70D003EB2D3 /* CountryDetailView.swift */,
 				22EE41E229A63D510067B0F6 /* UnionListView.swift */,
 				22EE41E429A640230067B0F6 /* UnionDetailView.swift */,
-				22D2D44329A8E72A0099A39B /* FavouritesView.swift */,
+				22D2D44329A8E72A0099A39B /* FavoritesView.swift */,
 				227942FA2A016202005D8DB3 /* SettingsView.swift */,
 			);
 			path = Screens;
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */,
+				227942FF2A029B66005D8DB3 /* Utilities.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -370,10 +376,12 @@
 			files = (
 				22173AEF29FC19D90069296C /* CountryGalleryCell.swift in Sources */,
 				22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */,
+				227943002A029B66005D8DB3 /* Utilities.swift in Sources */,
 				22DDD31429CDED8100A3C9A2 /* Consts.swift in Sources */,
 				228969A9295E252D006D4D89 /* ContentView.swift in Sources */,
 				22F10E30298DA8C700C89193 /* UnionGalleryCell.swift in Sources */,
 				22EE41E529A640230067B0F6 /* UnionDetailView.swift in Sources */,
+				227942FE2A027E13005D8DB3 /* AppearanceMode.swift in Sources */,
 				22F10E2C298D980100C89193 /* Union.swift in Sources */,
 				22FC040B29BA51020026B05F /* FavoriteCountriesViewModel.swift in Sources */,
 				22173AED29FC18EE0069296C /* CountriesScrollableGallery.swift in Sources */,
@@ -384,7 +392,7 @@
 				227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */,
 				22EE41E329A63D510067B0F6 /* UnionListView.swift in Sources */,
 				2231D5CC29E83FD3000808DF /* ScrollAnchor.swift in Sources */,
-				22D2D44429A8E72A0099A39B /* FavouritesView.swift in Sources */,
+				22D2D44429A8E72A0099A39B /* FavoritesView.swift in Sources */,
 				22F10E2E298D9B9500C89193 /* UnionViewModel.swift in Sources */,
 				22EBEFD529E46F5800539242 /* Tabs.swift in Sources */,
 				22D8E4F029741175008FAE5D /* FlagView.swift in Sources */,

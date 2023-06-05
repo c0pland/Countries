@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
 	@StateObject var router = Router()
+	@AppStorage("selectedAppearance") var selectedAppearance = 0
+	var utilities = Utilities()
 	
 	var body: some View {
 		ScrollViewReader { proxy in
@@ -16,7 +18,6 @@ struct ContentView: View {
 				NavigationStack(path: $router.countriesPath) {
 					CountriesListView()
 				}
-				.navigationTitle(router.navigationTitle)
 				.tag(Tabs.countries)
 				.tabItem {
 					Label("Countries", systemImage: "globe.europe.africa")
@@ -25,7 +26,6 @@ struct ContentView: View {
 				.onAppear {
 					router.navigationTitle = "Countries"
 				}
-				
 				NavigationStack(path: $router.unionsPath) {
 					UnionListView()
 				}
@@ -38,7 +38,7 @@ struct ContentView: View {
 				}
 				
 				NavigationStack(path: $router.favoritesPath) {
-					FavouritesView()
+					FavoritesView()
 				}
 				.tag(Tabs.favorites)
 				.tabItem {

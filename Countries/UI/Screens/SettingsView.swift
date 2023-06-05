@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct SettingsView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	// @AppStorage("appearanceMode") var appearanceMode: AppearanceMode = .automatic
+	@EnvironmentObject private var router: Router
+	
+	var body: some View {
+		Form {
+			Section("Appearance") {
+				Toggle("Dark", isOn: .constant(true))
+			}
+		}
+		.navigationTitle(router.navigationTitle)
+	}
 }
 
 struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
+	static var previews: some View {
+		SettingsView()
+			.environmentObject(Router())
+	}
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavouritesView: View {
+struct FavoritesView: View {
 	@ObservedObject var favoriteCountriesViewModel = FavoriteCountriesViewModel()
 	@ObservedObject var router = Router()
 	
@@ -19,18 +19,19 @@ struct FavouritesView: View {
 				}
 				.id(ScrollAnchor.favorites)
 		}
+		.navigationTitle(router.navigationTitle)
 		.navigationDestination(for: Union.self) { union in
 			UnionDetailView(union: union)
 		}
-		.navigationTitle(router.navigationTitle)
 		.navigationDestination(for: Country.self) { country in
 			CountryDetailView(country: country)
 		}
 	}
 }
 
-struct FavouritesView_Previews: PreviewProvider {
+struct FavoritesView_Previews: PreviewProvider {
 	static var previews: some View {
-		FavouritesView()
+		FavoritesView()
+			.environmentObject(Router())
 	}
 }
