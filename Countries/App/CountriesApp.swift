@@ -22,7 +22,7 @@ struct CountriesApp: App {
 		unionViewModel.loadData(fileName: "unions")
 	}
 	var body: some Scene {
-		var colorScheme: ColorScheme = appearanceMode == "Light" ? .light : .dark
+		let colorScheme: ColorScheme = appearanceMode == "Light" ? .light : .dark
 		WindowGroup {
 			ContentView()
 				.environmentObject(countryViewModel)
