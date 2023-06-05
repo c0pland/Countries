@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct SettingsView: View {
-	// @AppStorage("appearanceMode") var appearanceMode: AppearanceMode = .automatic
+	@AppStorage("appearanceMode") var appearanceMode = "Light"
 	@EnvironmentObject private var router: Router
 	
 	var body: some View {
+		let themes = ["Light", "Dark"]
 		Form {
 			Section("Appearance") {
-				Toggle("Dark", isOn: .constant(true))
+				Picker("Mode", selection: $appearanceMode) {
+					ForEach(themes, id: \.self) { Text($0) }
+				}
+				.pickerStyle(.segmented)
 			}
 		}
 		.navigationTitle(router.navigationTitle)

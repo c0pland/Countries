@@ -12,6 +12,7 @@ struct CountriesApp: App {
 	@ObservedObject private var countryViewModel: CountryViewModel
 	@ObservedObject private var unionViewModel: UnionViewModel
 	@ObservedObject private var router: Router
+	@AppStorage("appearanceMode") var appearanceMode = "Light"
 	
 	init() {
 		self.countryViewModel = CountryViewModel()
@@ -21,11 +22,13 @@ struct CountriesApp: App {
 		unionViewModel.loadData(fileName: "unions")
 	}
 	var body: some Scene {
+		var colorScheme: ColorScheme = appearanceMode == "Light" ? .light : .dark
 		WindowGroup {
 			ContentView()
 				.environmentObject(countryViewModel)
 				.environmentObject(unionViewModel)
 				.environmentObject(router)
+				.preferredColorScheme(colorScheme)
 		}
 	}
 }

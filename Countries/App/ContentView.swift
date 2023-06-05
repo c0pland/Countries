@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
 	@StateObject var router = Router()
 	@AppStorage("selectedAppearance") var selectedAppearance = 0
-	var utilities = Utilities()
 	
 	var body: some View {
 		ScrollViewReader { proxy in

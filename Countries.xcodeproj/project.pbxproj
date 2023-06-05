@@ -21,7 +21,6 @@
 		2265523829E03D8C00F8A458 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2265523729E03D8C00F8A458 /* FavoritesTests.swift */; };
 		227942FB2A016202005D8DB3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FA2A016202005D8DB3 /* SettingsView.swift */; };
 		227942FE2A027E13005D8DB3 /* AppearanceMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FD2A027E13005D8DB3 /* AppearanceMode.swift */; };
-		227943002A029B66005D8DB3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227942FF2A029B66005D8DB3 /* Utilities.swift */; };
 		227F00CC29A7902200490844 /* UnionEmblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F00CB29A7902200490844 /* UnionEmblem.swift */; };
 		227F090D29D1D09800BC148A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F090C29D1D09800BC148A /* Router.swift */; };
 		228969A7295E252D006D4D89 /* CountriesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228969A6295E252D006D4D89 /* CountriesApp.swift */; };
@@ -71,7 +70,6 @@
 		2265523729E03D8C00F8A458 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		227942FA2A016202005D8DB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		227942FD2A027E13005D8DB3 /* AppearanceMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceMode.swift; sourceTree = "<group>"; };
-		227942FF2A029B66005D8DB3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		227F00CB29A7902200490844 /* UnionEmblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnionEmblem.swift; sourceTree = "<group>"; };
 		227F090C29D1D09800BC148A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		228969A3295E252D006D4D89 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				22899B4B296DED5500BAE90B /* CodeableBundleExtension.swift */,
-				227942FF2A029B66005D8DB3 /* Utilities.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -376,7 +373,6 @@
 			files = (
 				22173AEF29FC19D90069296C /* CountryGalleryCell.swift in Sources */,
 				22899B4C296DED5500BAE90B /* CodeableBundleExtension.swift in Sources */,
-				227943002A029B66005D8DB3 /* Utilities.swift in Sources */,
 				22DDD31429CDED8100A3C9A2 /* Consts.swift in Sources */,
 				228969A9295E252D006D4D89 /* ContentView.swift in Sources */,
 				22F10E30298DA8C700C89193 /* UnionGalleryCell.swift in Sources */,
