@@ -20,6 +20,13 @@ struct SettingsView: View {
 				}
 				.pickerStyle(.segmented)
 			}
+			Section("Credits") {
+				Text("Made by Bogdan Benner")
+					.font(.title3)
+					.foregroundColor(.gray)
+				Link("GitHub", destination: URL(string: "https://github.com/c0pland")!)
+				Link("LinkedIn", destination: URL(string: "https://linkedin.com/in/bennerbr")!)
+			}
 		}
 		.navigationTitle(router.navigationTitle)
 	}
