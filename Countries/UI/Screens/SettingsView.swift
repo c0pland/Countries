@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
 	@AppStorage("appearanceMode") var appearanceMode = "Light"
 	@EnvironmentObject private var router: Router
+	@AppStorage("saveSearchHistory") var saveSearchHistory = true
 	
 	var body: some View {
 		let themes = ["Light", "Dark"]
@@ -19,6 +20,12 @@ struct SettingsView: View {
 					ForEach(themes, id: \.self) { Text($0) }
 				}
 				.pickerStyle(.segmented)
+			}
+			Section("Search") {
+				Toggle("Save search history", isOn: $saveSearchHistory)
+				Button("Clear Search History") {
+					// add action
+				}
 			}
 			Section("Credits") {
 				Text("Made by Bogdan Benner")
